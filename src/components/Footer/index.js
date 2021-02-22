@@ -1,0 +1,16 @@
+import React from 'react';
+import styles from './footer.module.scss';
+
+const Footer = () => {
+  return (
+    <footer className={styles['footer']}>
+      <h2>Footer Section</h2>
+      <p>&copy;{new Date().getFullYear()} Alex Rosenkranz</p>
+      <p>
+        <a href="https://github.com/arosenkranz">GitHub</a>
+      </p>
+    </footer>
+  );
+};
+
+export default Footer;
