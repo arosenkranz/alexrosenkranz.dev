@@ -1,0 +1,7 @@
+@use '../../styles/theme';
+
+.header {
+  &__wrapper {
+    @include theme.wrap-section();
+  }
+}

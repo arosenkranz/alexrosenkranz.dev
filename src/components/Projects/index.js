@@ -3,8 +3,10 @@ import styles from './projects.module.scss';
 
 const Projects = () => {
   return (
-    <section>
-      <h2>Projects Section</h2>
+    <section className={styles['projects']}>
+      <div className={styles['projects__wrapper']}>
+        <h2>Projects Section</h2>
+      </div>
     </section>
   );
 };

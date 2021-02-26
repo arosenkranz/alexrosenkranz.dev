@@ -1,0 +1,7 @@
+@use '../../styles/theme';
+
+.projects {
+  &__wrapper {
+    @include theme.wrap-section();
+  }
+}

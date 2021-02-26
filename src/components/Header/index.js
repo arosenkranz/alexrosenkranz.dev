@@ -3,8 +3,10 @@ import styles from './header.module.scss';
 
 const Header = () => {
   return (
-    <header>
-      <h2>Header Section</h2>
+    <header className={styles['header']}>
+      <div className={styles['header__wrapper']}>
+        <h1>Alex Rosenkranz</h1>
+      </div>
     </header>
   );
 };
