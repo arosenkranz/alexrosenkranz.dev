@@ -1,9 +1,6 @@
 @use '../../styles/theme';
 
 .hero {
-  background-color: theme.$background-inverted;
-  color: theme.$primary-inverted;
-  height: 70vh;
   display: flex;
   align-items: flex-end;
   &__wrapper {

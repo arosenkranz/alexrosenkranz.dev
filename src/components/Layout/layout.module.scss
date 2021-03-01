@@ -1,0 +1,28 @@
+@use '../../styles/theme';
+
+.page {
+  &__layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    > * {
+      width: 100%;
+    }
+
+    &--dark {
+      background-color: theme.$background-inverted;
+      color: theme.$primary-inverted;
+    }
+
+    &--light {
+      background-color: theme.$background;
+      color: theme.$primary;
+    }
+  }
+
+  &__main-content {
+    @include theme.wrap-section;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+}

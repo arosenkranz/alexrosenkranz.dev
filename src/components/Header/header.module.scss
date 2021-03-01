@@ -1,7 +1,9 @@
 @use '../../styles/theme';
+@use 'sass:color';
 
 .header {
   &__wrapper {
-    @include theme.wrap-section();
+    @include theme.wrap-section($wide: true);
+    padding: 24px 0;
   }
 }
