@@ -1,5 +1,3 @@
 [build]
-  command   = "yarn build"
-  # as per `next-on-netlify` library to automatically take api routes and create serverless functions
-  functions = "out_functions"
-  publish   = "out_publish"
+  command   = "yarn build && yarn export"
+  publish   = "out"
