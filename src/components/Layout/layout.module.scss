@@ -1,0 +1,22 @@
+@use '../../styles/theme';
+
+.page {
+  &__layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+    @include theme.theme-aware('background-color', 'color-background');
+    @include theme.theme-aware('color', 'color-text');
+
+    > * {
+      width: 100%;
+    }
+  }
+
+  &__main-content {
+    @include theme.wrap-section;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+}

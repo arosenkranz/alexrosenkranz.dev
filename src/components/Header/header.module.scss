@@ -1,7 +1,68 @@
 @use '../../styles/theme';
+@use 'sass:color';
 
 .header {
   &__wrapper {
-    @include theme.wrap-section();
+    @include theme.wrap-section($wide: true);
+    padding: 24px 0;
+    display: flex;
+  }
+
+  &__logo {
+    font-weight: 800;
+    padding: 0 12px;
+  }
+
+  &__theme-btn {
+    margin-left: auto;
+    background: none;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    @include theme.theme-aware('fill', 'color-text');
+
+    &--sun {
+      &--invisible {
+        path {
+          animation: hide 0.1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+          @for $i from 1 through 8 {
+            &:nth-child(#{$i}) {
+              animation-delay: $i * 0.1s;
+            }
+          }
+        }
+      }
+      &--visible {
+        path {
+          animation: show 0.1s cubic-bezier(0.215, 0.61, 0.355, 1) backwards;
+          @for $i from 1 through 9 {
+            &:nth-last-child(#{$i}) {
+              animation-delay: $i * 0.1s;
+            }
+          }
+        }
+      }
+      @keyframes show {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes hide {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+    }
   }
 }

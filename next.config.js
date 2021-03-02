@@ -1,8 +1,9 @@
 module.exports = {
   // Target must be serverless
   target: 'serverless',
-  i18n: {
-    locales: ['en-US', 'de'],
-    defaultLocale: 'en-US',
+  images: {
+    domains: [
+      'i.scdn.co', // Spotify Album Art
+    ],
   },
 };

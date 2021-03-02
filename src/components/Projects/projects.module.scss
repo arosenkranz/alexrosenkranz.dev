@@ -4,4 +4,60 @@
   &__wrapper {
     @include theme.wrap-section();
   }
+
+  &__item {
+    margin: 24px 0;
+    padding-bottom: 24px;
+    border-bottom: 1px dotted theme.$primary;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    @include theme.lg() {
+      grid-template-columns: repeat(6, 1fr);
+    }
+    &-title {
+      grid-column: 1 / -1;
+    }
+    &-description {
+      grid-column: 1 / -1;
+      margin: 12px 0;
+    }
+
+    &-label {
+      grid-column: 1/-1;
+      text-align: left;
+      text-decoration: underline;
+      padding: 4px 0;
+      @include theme.lg() {
+        grid-column: 1 / span 1;
+      }
+    }
+    &-list {
+      grid-column: span 5;
+      list-style: none;
+      margin: 0;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    &-listitem {
+      padding: 0 4px;
+    }
+    &-links {
+      grid-column: span 5;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    &-link {
+      padding: 8px;
+      text-decoration: underline;
+      color: blue;
+      &:hover {
+        background-color: theme.$background-inverted;
+        color: theme.$primary-inverted;
+      }
+    }
+  }
 }

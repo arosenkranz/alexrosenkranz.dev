@@ -1,12 +1,17 @@
-// $primary: #0b4170;
-// $primary-inverted: #ecd7b3;
-// $background: #ecd7b3;
-// $background-inverted: #0b4170;
+$primary: #2c373f;
+$primary-inverted: #d4e7dc;
+$background: #d4e7dc;
+$background-inverted: #2c373f;
 
-$primary: #000000;
-$primary-inverted: #ffffff;
-$background: #ffffff;
-$background-inverted: #000000;
+// $primary: #c9fbe7;
+// $primary-inverted: #2b4b73;
+// $background: #2b4b73;
+// $background-inverted: #c9fbe7;
+
+// $primary: #000000;
+// $primary-inverted: #ffffff;
+// $background: #ffffff;
+// $background-inverted: #000000;
 
 $neutral-100: #ffffff;
 $neutral-200: #f4f5f7;
@@ -18,3 +23,14 @@ $neutral-600: #000000;
 $error: #fa4141;
 $warning: #ffd700;
 $success: #21ff63;
+
+$themes: (
+  light: (
+    color-text: #2c373f,
+    color-background: #d4e7dc,
+  ),
+  dark: (
+    color-text: #d4e7dc,
+    color-background: #2c373f,
+  ),
+);
