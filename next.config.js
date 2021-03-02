@@ -1,6 +1,8 @@
 module.exports = {
-  // Target must be serverless
   target: 'serverless',
+  options: {
+    dist: 'out_publish',
+  },
   images: {
     domains: [
       'i.scdn.co', // Spotify Album Art
