@@ -4,9 +4,14 @@ import Projects from '../components/Projects';
 
 import { getAllFilesFrontMatter } from '../lib/mdx';
 
+const metadata = {
+  pageTitle: 'Alex Rosenkranz // Developer',
+  description: 'The personal portfolio and blog of Alex Rosenkranz.',
+};
+
 const Home = ({ projectList }) => {
   return (
-    <Layout>
+    <Layout {...metadata}>
       <Hero headline={'Alex Rosenkranz'}>
         <p>
           Hi there! I'm Alex Rosenkranz, a developer, subject matter expert, educator, and technical writer with an
