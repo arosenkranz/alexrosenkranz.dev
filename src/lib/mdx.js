@@ -46,11 +46,11 @@ export const getAllFilesFrontMatter = (contentType) => {
     const { data } = matter(source);
 
     return [
+      ...allContent,
       {
         ...data,
         slug: slug.replace('.mdx', ''),
       },
-      ...allContent,
     ];
   }, []);
 };

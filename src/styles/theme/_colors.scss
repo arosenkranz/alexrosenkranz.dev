@@ -28,9 +28,13 @@ $themes: (
   light: (
     color-text: #2c373f,
     color-background: #d4e7dc,
+    color-text-inverted: #d4e7dc,
+    color-background-inverted: #2c373f,
   ),
   dark: (
     color-text: #d4e7dc,
     color-background: #2c373f,
+    color-text-inverted: #2c373f,
+    color-background-inverted: #d4e7dc,
   ),
 );
