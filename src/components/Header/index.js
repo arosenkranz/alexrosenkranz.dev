@@ -3,7 +3,6 @@ import styles from './header.module.scss';
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
-  console.log(theme);
   return (
     <header className={styles['header']}>
       <div className={styles['header__wrapper']}>

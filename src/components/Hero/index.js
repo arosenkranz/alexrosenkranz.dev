@@ -5,7 +5,7 @@ const Hero = ({ headline, children }) => {
   return (
     <section className={styles['hero']}>
       <div className={styles['hero__wrapper']}>
-        <h2>{headline}</h2>
+        <h1>{headline}</h1>
         {children}
       </div>
     </section>
