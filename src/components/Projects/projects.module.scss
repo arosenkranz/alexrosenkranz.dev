@@ -15,7 +15,7 @@
     border-bottom-width: 1px;
     border-bottom-style: dotted;
     @include theme.theme-aware('border-color', 'color-text');
-    @include theme.lg() {
+    @include theme.md() {
       grid-template-columns: repeat(6, 1fr);
     }
     &:last-of-type {
@@ -36,7 +36,7 @@
       padding: 4px 0;
       font-weight: 700;
       font-size: theme.$header5;
-      @include theme.lg() {
+      @include theme.md() {
         grid-column: 1 / span 1;
       }
     }
@@ -50,13 +50,14 @@
       flex-wrap: wrap;
     }
     &-listitem {
-      padding: 0 4px;
+      padding: 0 4px 0 0;
     }
     &-links {
       grid-column: span 5;
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      margin-left: -2px;
     }
     &-link {
       padding: 2px 8px;
