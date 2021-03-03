@@ -4,5 +4,26 @@
   margin-top: auto;
   &__wrapper {
     @include theme.wrap-section();
+    padding-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+  }
+  &__list {
+    flex: 1 auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    @include theme.md() {
+      justify-content: flex-end;
+      margin-left: auto;
+      flex: 0 50%;
+    }
+    &-link {
+      padding: 4px 8px;
+      @include theme.theme-aware('color', 'color-text', $link: true);
+    }
   }
 }

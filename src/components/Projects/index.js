@@ -1,15 +1,22 @@
 import React from 'react';
 import styles from './projects.module.scss';
 import { CustomLink } from '../MDXComponents';
+import { useTheme } from '../../lib/ThemeProvider';
 
 const Projects = ({ projects = [] }) => {
+  const { theme } = useTheme();
   return (
     <section className={styles['projects']}>
       <div className={styles['projects__wrapper']}>
         <h2>Projects</h2>
         {projects.map((project) => {
           return (
-            <div key={project.title} className={styles['projects__item']}>
+            <div
+              key={project.title}
+              className={`${styles['projects__item']} ${
+                theme === 'LIGHT' ? styles['projects__item--light'] : styles['projects__item--dark']
+              }`}
+            >
               <h3 className={styles['projects__item-title']}>{project.title}</h3>
               <div className={styles['projects__item-description']}>{project.description}</div>
               <div className={styles['projects__item-label']}>Built With</div>
@@ -20,17 +27,33 @@ const Projects = ({ projects = [] }) => {
                   </li>
                 ))}
               </ul>
-              <div className={styles['projects__item-label']}>Links</div>
-              <div className={styles['projects__item-links']}>
-                <CustomLink href={project.repo} className={styles['projects__item-link']}>
-                  GitHub Repo
-                </CustomLink>
-                {project.deployed && (
-                  <CustomLink href={project.deployed} className={styles['projects__item-link']}>
-                    Deployed Application
-                  </CustomLink>
-                )}
-              </div>
+              {project.public && (
+                <>
+                  <div className={styles['projects__item-label']}>Links</div>
+                  <div className={styles['projects__item-links']}>
+                    {project.repo && (
+                      <CustomLink
+                        href={project.repo}
+                        className={`${styles['projects__item-link']} ${
+                          theme === 'LIGHT' ? styles['projects__item-link--light'] : styles['projects__item-link--dark']
+                        }`}
+                      >
+                        GitHub Repo
+                      </CustomLink>
+                    )}
+                    {project.deployed && (
+                      <CustomLink
+                        href={project.deployed}
+                        className={`${styles['projects__item-link']} ${
+                          theme === 'LIGHT' ? styles['projects__item-link--light'] : styles['projects__item-link--dark']
+                        }`}
+                      >
+                        Deployed Application
+                      </CustomLink>
+                    )}
+                  </div>
+                </>
+              )}
             </div>
           );
         })}

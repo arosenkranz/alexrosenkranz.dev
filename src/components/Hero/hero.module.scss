@@ -3,6 +3,7 @@
 .hero {
   display: flex;
   align-items: flex-end;
+  margin-bottom: 24px;
   &__wrapper {
     @include theme.wrap-section();
   }
