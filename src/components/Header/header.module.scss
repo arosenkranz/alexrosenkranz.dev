@@ -2,6 +2,8 @@
 @use 'sass:color';
 
 .header {
+  position: sticky;
+  top: 0;
   &__wrapper {
     @include theme.wrap-section($wide: true);
     padding: 24px 0;
