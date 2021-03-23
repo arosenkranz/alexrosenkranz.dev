@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <header className={styles['header']}>
       <div className={styles['header__wrapper']}>
-        {data && (
+        {data?.isPlaying && (
           <div className={styles['header__spotify']}>
             <span>Current Listening:</span>
             <div className={styles['header__nowPlayingWrapper']}>
