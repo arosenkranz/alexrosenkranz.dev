@@ -1,5 +1,5 @@
-import { useTheme } from '../../lib/ThemeProvider';
-import { CustomLink } from '../MDXComponents';
+import { useTheme } from '@/lib/ThemeProvider';
+import CustomLink from '@/components/CustomLink';
 import styles from './footer.module.scss';
 
 const links = [

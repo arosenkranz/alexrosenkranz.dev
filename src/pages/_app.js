@@ -1,6 +1,6 @@
-import { ThemeProvider } from '../lib/ThemeProvider';
+import { ThemeProvider } from '@/lib/ThemeProvider';
 import 'normalize.css';
-import '../styles/globals.scss';
+import '@/styles/globals.scss';
 
 const App = ({ Component, pageProps }) => {
   return (

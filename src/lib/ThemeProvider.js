@@ -5,9 +5,9 @@ const { Provider } = ThemeContext;
 
 const themeReducer = (_, action) => {
   switch (action.type) {
-    case 'LIGHT':
+    case 'TOGGLE_LIGHT':
       return 'LIGHT';
-    case 'DARK':
+    case 'TOGGLE_DARK':
       return 'DARK';
     default:
       return 'LIGHT';
@@ -26,7 +26,9 @@ export const ThemeProvider = ({ ...props }) => {
     }
   }, [state]);
 
-  return <Provider value={{ theme: state, setTheme: dispatch }} {...props} />;
+  const setTheme = (mode) => dispatch({ type: mode });
+
+  return <Provider value={{ theme: state, setTheme }} {...props} />;
 };
 
 export const useTheme = () => {

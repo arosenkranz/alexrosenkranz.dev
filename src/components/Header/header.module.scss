@@ -2,20 +2,65 @@
 @use 'sass:color';
 
 .header {
-  position: sticky;
-  top: 0;
   &__wrapper {
-    @include theme.wrap-section($wide: true);
+    @include theme.wrap-section();
     padding: 24px 0;
     display: flex;
+    align-items: center;
   }
 
-  &__logo {
-    font-weight: 800;
-    padding: 0 12px;
+  &__spotify {
+    flex: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    @include theme.md() {
+      flex: 0 auto;
+    }
+
+    span {
+      padding: 0 8px 0 0;
+    }
   }
 
-  &__theme-btn {
+  &__nowPlayingWrapper {
+    width: 60%;
+    overflow: hidden;
+  }
+
+  &__nowPlaying {
+    display: inline-block;
+    width: max-content;
+
+    padding-left: 0;
+    will-change: transform;
+    animation: marquee 20s linear infinite;
+    animation-delay: 4s;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translate(0, 0);
+      }
+      75% {
+        transform: translate(-75%, 0);
+      }
+      100% {
+        transform: translate(-75%, 0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      animation-iteration-count: 1;
+      animation-duration: 0.01;
+      width: auto;
+      padding-left: 0;
+    }
+  }
+
+  &__themeBtn {
     margin-left: auto;
     background: none;
     border: none;
@@ -24,43 +69,42 @@
 
   &__icon {
     @include theme.theme-aware('fill', 'color-text');
-
-    &--sun {
-      &--invisible {
-        path {
-          animation: hide 0.1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
-          @for $i from 1 through 8 {
-            &:nth-child(#{$i}) {
-              animation-delay: $i * 0.1s;
-            }
+  }
+  &__iconSun {
+    &--invisible {
+      path {
+        animation: hide 0.1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+        @for $i from 1 through 8 {
+          &:nth-child(#{$i}) {
+            animation-delay: $i * 0.1s;
           }
         }
       }
-      &--visible {
-        path {
-          animation: show 0.1s cubic-bezier(0.215, 0.61, 0.355, 1) backwards;
-          @for $i from 1 through 9 {
-            &:nth-last-child(#{$i}) {
-              animation-delay: $i * 0.1s;
-            }
+    }
+    &--visible {
+      path {
+        animation: show 0.1s cubic-bezier(0.215, 0.61, 0.355, 1) backwards;
+        @for $i from 1 through 9 {
+          &:nth-last-child(#{$i}) {
+            animation-delay: $i * 0.1s;
           }
         }
       }
-      @keyframes show {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
+    }
+    @keyframes show {
+      from {
+        opacity: 0;
       }
-      @keyframes hide {
-        from {
-          opacity: 1;
-        }
-        to {
-          opacity: 0;
-        }
+      to {
+        opacity: 1;
+      }
+    }
+    @keyframes hide {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
       }
     }
   }

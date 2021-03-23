@@ -1,16 +1,30 @@
-import { useTheme } from '../../lib/ThemeProvider';
+import useSWR from 'swr';
+import CustomLink from '@/components/CustomLink';
+import { useTheme } from '@/lib/ThemeProvider';
+import { fetcher } from '@/lib/fetcher';
+
 import styles from './header.module.scss';
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
+  const { data, loading, error } = useSWR('/api/now-playing', fetcher);
   return (
     <header className={styles['header']}>
       <div className={styles['header__wrapper']}>
-        {/* <h1 className={styles['header__logo']}>AR</h1> */}
+        {data && (
+          <div className={styles['header__spotify']}>
+            <span>Current Listening:</span>
+            <div className={styles['header__nowPlayingWrapper']}>
+              <CustomLink href={data.spotifyUrl} className={styles['header__nowPlaying']}>
+                {data.track} by {data.artist}
+              </CustomLink>
+            </div>
+          </div>
+        )}
         <button
           aria-label="Toggle Dark Mode"
-          className={styles['header__theme-btn']}
-          onClick={() => setTheme({ type: theme === 'LIGHT' ? 'DARK' : 'LIGHT' })}
+          className={styles['header__themeBtn']}
+          onClick={() => setTheme(theme === 'LIGHT' ? 'TOGGLE_DARK' : 'TOGGLE_LIGHT')}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,8 +45,8 @@ const Header = () => {
               ></path>
             </g>
             <g
-              className={`${styles['header__icon--sun']} ${
-                theme === 'LIGHT' ? styles['header__icon--sun--visible'] : styles['header__icon--sun--invisible']
+              className={`${styles['header__iconSun']} ${
+                theme === 'LIGHT' ? styles['header__iconSun--visible'] : styles['header__iconSun--invisible']
               }`}
               transform="translate(0,-284.29998)"
             >

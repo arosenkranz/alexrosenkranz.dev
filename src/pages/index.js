@@ -1,8 +1,8 @@
-import Layout from '../components/Layout';
-import Hero from '../components/Hero';
-import Projects from '../components/Projects';
+import Layout from '@/components/Layout';
+import Hero from '@/components/Hero';
+import Projects from '@/components/Projects';
 
-import { getAllFilesFrontMatter } from '../lib/mdx';
+import { getAllFilesFrontMatter } from '@/lib/mdx';
 
 const metadata = {
   pageTitle: 'Alex Rosenkranz // Developer',
