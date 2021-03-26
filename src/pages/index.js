@@ -1,7 +1,9 @@
 import Layout from '@/components/Layout';
 import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
+import Music from '@/components/Music';
 
+import { fetcher } from '@/lib/fetcher';
 import { getAllFilesFrontMatter } from '@/lib/mdx';
 
 const metadata = {
@@ -24,6 +26,7 @@ const Home = ({ projectList }) => {
         </p>
       </Hero>
       <Projects projects={projectList} />
+      <Music />
     </Layout>
   );
 };

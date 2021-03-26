@@ -1,26 +1,12 @@
-import useSWR from 'swr';
-import CustomLink from '@/components/CustomLink';
 import { useTheme } from '@/lib/ThemeProvider';
-import { fetcher } from '@/lib/fetcher';
 
 import styles from './header.module.scss';
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
-  const { data, loading, error } = useSWR('/api/now-playing', fetcher);
   return (
     <header className={styles['header']}>
       <div className={styles['header__wrapper']}>
-        {data?.isPlaying && (
-          <div className={styles['header__spotify']}>
-            <span>Current Listening:</span>
-            <div className={styles['header__nowPlayingWrapper']}>
-              <CustomLink href={data.spotifyUrl} className={styles['header__nowPlaying']}>
-                {data.track} by {data.artist}
-              </CustomLink>
-            </div>
-          </div>
-        )}
         <button
           aria-label="Toggle Dark Mode"
           className={styles['header__themeBtn']}

@@ -9,57 +9,6 @@
     align-items: center;
   }
 
-  &__spotify {
-    flex: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    @include theme.md() {
-      flex: 0 auto;
-    }
-
-    span {
-      padding: 0 8px 0 0;
-    }
-  }
-
-  &__nowPlayingWrapper {
-    width: 60%;
-    overflow: hidden;
-  }
-
-  &__nowPlaying {
-    display: inline-block;
-    width: max-content;
-
-    padding-left: 0;
-    will-change: transform;
-    animation: marquee 20s linear infinite;
-    animation-delay: 4s;
-
-    &:hover {
-      animation-play-state: paused;
-    }
-
-    @keyframes marquee {
-      0% {
-        transform: translate(0, 0);
-      }
-      75% {
-        transform: translate(-75%, 0);
-      }
-      100% {
-        transform: translate(-75%, 0);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      animation-iteration-count: 1;
-      animation-duration: 0.01;
-      width: auto;
-      padding-left: 0;
-    }
-  }
-
   &__themeBtn {
     margin-left: auto;
     background: none;
