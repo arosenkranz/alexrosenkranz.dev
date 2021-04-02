@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './projects.module.scss';
-import { CustomLink } from '../MDXComponents';
-import { useTheme } from '../../lib/ThemeProvider';
+import CustomLink from '@/components/CustomLink';
+import { useTheme } from '@/lib/ThemeProvider';
 
 const Projects = ({ projects = [] }) => {
   const { theme } = useTheme();

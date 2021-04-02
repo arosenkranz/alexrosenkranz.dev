@@ -1,4 +1,5 @@
-import { useTheme } from '../../lib/ThemeProvider';
+import { useTheme } from '@/lib/ThemeProvider';
+
 import styles from './header.module.scss';
 
 const Header = () => {
@@ -6,11 +7,10 @@ const Header = () => {
   return (
     <header className={styles['header']}>
       <div className={styles['header__wrapper']}>
-        {/* <h1 className={styles['header__logo']}>AR</h1> */}
         <button
           aria-label="Toggle Dark Mode"
-          className={styles['header__theme-btn']}
-          onClick={() => setTheme({ type: theme === 'LIGHT' ? 'DARK' : 'LIGHT' })}
+          className={styles['header__themeBtn']}
+          onClick={() => setTheme(theme === 'LIGHT' ? 'TOGGLE_DARK' : 'TOGGLE_LIGHT')}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,8 +31,8 @@ const Header = () => {
               ></path>
             </g>
             <g
-              className={`${styles['header__icon--sun']} ${
-                theme === 'LIGHT' ? styles['header__icon--sun--visible'] : styles['header__icon--sun--invisible']
+              className={`${styles['header__iconSun']} ${
+                theme === 'LIGHT' ? styles['header__iconSun--visible'] : styles['header__iconSun--invisible']
               }`}
               transform="translate(0,-284.29998)"
             >
