@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  min-width: 360px;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-mono font-normal text-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-mono font-extralight;
+}
