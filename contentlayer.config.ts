@@ -1,8 +1,4 @@
-import {
-  ComputedFields,
-  defineDocumentType,
-  makeSource,
-} from 'contentlayer/source-files';
+import { ComputedFields, defineDocumentType, makeSource } from 'contentlayer/source-files';
 
 import readingTime from 'reading-time';
 import remarkGfm from 'remark-gfm';
@@ -38,9 +34,23 @@ const Work = defineDocumentType(() => ({
   computedFields,
 }));
 
+const Post = defineDocumentType(() => ({
+  name: 'Post',
+  filePathPattern: 'Posts/**/*.mdx',
+  bodyType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    date: { type: 'date', required: false },
+    description: { type: 'string', required: false },
+    image: { type: 'string', required: false },
+    tags: { type: 'json', required: false },
+  },
+  computedFields,
+}));
+
 export default makeSource({
   contentDirPath: 'content',
-  documentTypes: [Work],
+  documentTypes: [Work, Post],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [

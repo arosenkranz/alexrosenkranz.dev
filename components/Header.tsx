@@ -4,6 +4,9 @@ import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import cn from 'classnames';
 
+import menuItems from 'lib/menu-items';
+import type { MenuItem } from 'lib/types';
+
 const sunPaths = [
   'm 10.283037,286.53405 -1.3483603,1.34832 a 0.12953382,0.12953382 0 0 0 0.1834294,0.18294 l 1.3476909,-1.34832 a 0.12935123,0.12935123 0 0 0 -0.18276,-0.18294 z',
   'm 12.041471,290.52064 h -1.906944 a 0.12935122,0.12935122 0 0 0 0,0.25869 h 1.906944 a 0.12935122,0.12935122 0 0 0 0,-0.25869 z',
@@ -88,10 +91,10 @@ export default function Header() {
   return (
     <header className="mb-8 pb-3 border-b text-xl  border-neutral-900 dark:border-neutral-50">
       <nav className="px-3 font-mono font-extralight italic flex flex-nowrap items-center">
-        <NavItem href="/" text="Home" />
-        <NavItem href="/about" text="About" />
-        <NavItem href="/work" text="Work" />
-        <NavItem href="/blog" text="Blog" />
+        {menuItems.map((item: MenuItem) => (
+          <NavItem key={item.href} href={item.href} text={item.text} />
+        ))}
+
         <ThemeButton />
       </nav>
     </header>
