@@ -30,7 +30,7 @@ export default function PageContainer({ pageTitle, description, previewImage, ty
         <title>{pageTitle}</title>
       </Head>
 
-      <div className="transition min-w-full min-h-screen w-full max-w-7xl mx-auto flex flex-col p-6">
+      <div className="transition min-h-screen w-11/12 max-w-7xl mx-auto flex flex-col p-6">
         <Header />
         <main className="px-3">{children}</main>
         <Footer />
