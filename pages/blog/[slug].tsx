@@ -1,25 +1,15 @@
-import { useMDXComponent } from 'next-contentlayer/hooks';
-import components from 'components/MDXComponents';
-import PageContainer from 'components/PageContainer';
 import { allPosts } from '.contentlayer/data';
 import type { Post } from '.contentlayer/types';
 
-export default function Post({ post }: { post: Post }) {
-  const Component = useMDXComponent(post.body.code);
+import PageContainer from 'components/PageContainer';
+import BlogPost from 'layouts/BlogPost';
 
+export default function Post({ post }: { post: Post }) {
   return (
     <PageContainer pageTitle={post.title} description={post.description} type="article">
-      <h1 className="text-6xl">{post.title}</h1>
-      <h4>{post.date}</h4>
-      <div className="prose-neutral w-10/12">
-        <Component
-          components={
-            {
-              ...components,
-            } as any
-          }
-        />
-      </div>
+      <article className="prose-neutral w-full lg:w-9/12">
+        <BlogPost post={post} />
+      </article>
     </PageContainer>
   );
 }

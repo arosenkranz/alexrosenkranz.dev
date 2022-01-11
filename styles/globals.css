@@ -17,7 +17,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-mono font-extralight;
+  @apply font-mono font-light;
 }
 
 .prose img {
@@ -30,15 +30,13 @@ h6 {
 }
 
 .rehype-code-title {
-  @apply mt-3 p-2 inline-block font-mono text-base text-gray-800 bg-gray-200 border border-b-0 border-gray-200  dark:text-gray-200 dark:border-gray-700 dark:bg-gray-800;
+  @apply mt-5 px-4 py-2 rounded-t-md inline-block font-mono text-base text-neutral-800 bg-neutral-300 border border-b-0 border-neutral-800   dark:border-neutral-100;
 }
 
 .rehype-code-title + pre {
-  @apply mt-0 rounded-t-none border-gray-700;
-  margin-top: 0 !important;
-  border-radius: 0 !important;
+  @apply !mt-0 !mb-5 border border-neutral-800 dark:border-neutral-100 rounded-b-md rounded-tr-md;
 }
 
 .highlight-line {
-  @apply block px-4 -mx-4 bg-neutral-800 border-l-4 border-blue-500;
+  @apply block px-4 -mx-4 border-l-8 border-neutral-100 bg-neutral-100 bg-opacity-5;
 }

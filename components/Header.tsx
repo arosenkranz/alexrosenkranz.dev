@@ -25,8 +25,8 @@ function NavItem({ href, text }: { href: string; text: string }) {
     <Link href={href}>
       <a
         className={cn(
-          isActive ? 'font-normal text-neutral-800 dark:text-neutral-200' : 'text-neutral-600 dark:text-neutral-400',
-          'hidden md:inline-block p-1 sm:px-3 sm:py-2 hover:bg-neutral-200 dark:hover:bg-neutral-300 transition-all',
+          isActive ? 'font-normal text-neutral-800 dark:text-neutral-200' : 'text-neutral-800 dark:text-neutral-200',
+          'hidden font-light rounded-md md:inline-block px-3 py-1 hover:bg-neutral-700 hover:text-neutral-200 dark:hover:bg-neutral-300 dark:hover:text-neutral-900 transition-all duration-200 ease-in-out',
         )}
       >
         {text}
@@ -89,7 +89,7 @@ function ThemeButton() {
 
 export default function Header() {
   return (
-    <header className="mb-8 pb-3 border-b text-xl  border-neutral-900 dark:border-neutral-50">
+    <header className="mb-8 py-2 border-b text-xl border-neutral-900 dark:border-neutral-50">
       <nav className="px-3 font-mono font-extralight italic flex flex-nowrap items-center">
         {menuItems.map((item: MenuItem) => (
           <NavItem key={item.href} href={item.href} text={item.text} />

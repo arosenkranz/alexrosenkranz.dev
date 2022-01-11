@@ -40,8 +40,8 @@ const Post = defineDocumentType(() => ({
   bodyType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
-    date: { type: 'date', required: false },
-    description: { type: 'string', required: false },
+    date: { type: 'date', required: true },
+    description: { type: 'string', required: true },
     image: { type: 'string', required: false },
     tags: { type: 'json', required: false },
   },

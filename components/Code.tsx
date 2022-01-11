@@ -1,4 +1,4 @@
-import 'prism-themes/themes/prism-cb.min.css';
+import 'prism-themes/themes/prism-night-owl.min.css';
 import { ReactNode, useRef, useState, useEffect } from 'react';
 import copyToClipboard from 'lib/copy-to-clipboard';
 
@@ -22,9 +22,14 @@ export default function Code(props: { className: string; children: ReactNode[] }
   return (
     <>
       <span ref={ref}>{props.children}</span>
-      <button className="text-sm text-neutral-500 hover:text-neutral-700" onClick={handleCopy}>
-        {isCopied ? 'Copied!' : 'Copy'}
-      </button>
+      <div className="w-full flex">
+        <button
+          className="text-sm ml-auto px-2 py-1 rounded-sm text-neutral-800 bg-neutral-100 hover:text-neutral-900 hover:bg-neutral-200 transition-colors duration-200"
+          onClick={handleCopy}
+        >
+          {isCopied ? 'Copied!' : 'Copy'}
+        </button>
+      </div>
     </>
   );
 }

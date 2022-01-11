@@ -21,11 +21,10 @@ const links: { label: string; url: string }[] = [
 
 export default function Footer() {
   return (
-    <footer className="mt-auto mb-4 flex flex-wrap justify-between items-center">
-      <h2 className="text-4xl">Get In Touch</h2>
-      <ul>
+    <footer className="mt-auto mb-4">
+      <ul className="w-full p-3 flex flex-wrap items-center border-t border-neutral-800 dark:border-neutral-200">
         {links.map(({ label, url }) => (
-          <CustomLink key={url} href={url} className="mr-2 text-lg">
+          <CustomLink key={url} href={url} className="mr-3 text-base font-normal">
             {label}
           </CustomLink>
         ))}
