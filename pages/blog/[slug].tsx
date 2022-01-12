@@ -7,7 +7,7 @@ import BlogPost from 'layouts/BlogPost';
 export default function Post({ post }: { post: Post }) {
   return (
     <PageContainer pageTitle={post.title} description={post.description} type="article">
-      <article className="prose-neutral w-full lg:w-9/12">
+      <article className="prose-neutral w-full">
         <BlogPost post={post} />
       </article>
     </PageContainer>

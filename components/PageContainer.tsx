@@ -13,8 +13,7 @@ type LayoutProps = {
 
 export default function PageContainer({ pageTitle, description, previewImage, type, children }: LayoutProps) {
   return (
-    <div className="bg-neutral-100 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-100 transition-all pointer-events-auto min-h-screen flex flex-col">
-      <div className="fixed border-neutral-200 dark:border-neutral-200 min-w-full min-h-screen border-[8px] pointer-events-none hidden"></div>
+    <div className="bg-neutral-100 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-100 transition-all min-h-screen flex flex-col">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
@@ -30,9 +29,9 @@ export default function PageContainer({ pageTitle, description, previewImage, ty
         <title>{pageTitle}</title>
       </Head>
 
-      <div className="transition min-h-screen w-11/12 max-w-7xl mx-auto flex flex-col p-6">
+      <div className="min-h-screen w-11/12 max-w-7xl mx-auto flex flex-col lg:w-8/12">
         <Header />
-        <main className="px-3">{children}</main>
+        <main className="p-3 my-5">{children}</main>
         <Footer />
       </div>
     </div>

@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import cn from 'classnames';
 
+import MobileMenu from 'components/MobileMenu';
+
 import menuItems from 'lib/menu-items';
 import type { MenuItem } from 'lib/types';
 
@@ -26,7 +28,7 @@ function NavItem({ href, text }: { href: string; text: string }) {
       <a
         className={cn(
           isActive ? 'font-normal text-neutral-800 dark:text-neutral-200' : 'text-neutral-800 dark:text-neutral-200',
-          'hidden font-light rounded-md md:inline-block px-3 py-1 hover:bg-neutral-700 hover:text-neutral-200 dark:hover:bg-neutral-300 dark:hover:text-neutral-900 transition-all duration-200 ease-in-out',
+          'hidden font-light rounded-sm md:inline-block px-3 py-1 mr-2 hover:bg-neutral-700 hover:text-neutral-200 dark:hover:bg-neutral-300 dark:hover:text-neutral-900 transition-all duration-200 ease-in-out',
         )}
       >
         {text}
@@ -89,8 +91,9 @@ function ThemeButton() {
 
 export default function Header() {
   return (
-    <header className="mb-8 py-2 border-b text-xl border-neutral-900 dark:border-neutral-50">
-      <nav className="px-3 font-mono font-extralight italic flex flex-nowrap items-center">
+    <header className="py-3 border-b text-xl border-neutral-900 dark:border-neutral-50">
+      <nav className="flex flex-nowrap items-center font-mono font-light italic">
+        <MobileMenu items={menuItems} />
         {menuItems.map((item: MenuItem) => (
           <NavItem key={item.href} href={item.href} text={item.text} />
         ))}
