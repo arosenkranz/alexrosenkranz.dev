@@ -27,8 +27,8 @@ function NavItem({ href, text }: { href: string; text: string }) {
     <Link href={href}>
       <a
         className={cn(
-          isActive ? 'font-normal text-neutral-800 dark:text-neutral-200' : 'text-neutral-800 dark:text-neutral-200',
-          'hidden font-light rounded-sm md:inline-block px-3 py-1 mr-2 hover:bg-neutral-700 hover:text-neutral-200 dark:hover:bg-neutral-300 dark:hover:text-neutral-900 transition-all duration-200 ease-in-out',
+          isActive && 'bg-neutral-500 text-neutral-100  ',
+          'hidden md:inline-block font-light rounded-sm mr-2 px-3 py-1 text-neutral-800 dark:text-neutral-100   hover:bg-neutral-700 hover:text-neutral-200 dark:hover:bg-neutral-300 dark:hover:text-neutral-900 transition-all duration-200 ease-in-out',
         )}
       >
         {text}
@@ -91,13 +91,12 @@ function ThemeButton() {
 
 export default function Header() {
   return (
-    <header className="py-3 border-b text-xl border-neutral-900 dark:border-neutral-50">
+    <header className="py-4 border-b text-xl border-neutral-900 dark:border-neutral-50">
       <nav className="flex flex-nowrap items-center font-mono font-light italic">
         <MobileMenu items={menuItems} />
         {menuItems.map((item: MenuItem) => (
           <NavItem key={item.href} href={item.href} text={item.text} />
         ))}
-
         <ThemeButton />
       </nav>
     </header>

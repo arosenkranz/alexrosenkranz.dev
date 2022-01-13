@@ -2,6 +2,7 @@ import Head from 'next/head';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import Music from 'components/Music';
 
 type LayoutProps = {
   pageTitle: string;
@@ -29,9 +30,10 @@ export default function PageContainer({ pageTitle, description, previewImage, ty
         <title>{pageTitle}</title>
       </Head>
 
-      <div className="min-h-screen w-11/12 max-w-7xl mx-auto flex flex-col lg:w-8/12">
+      <div className="min-h-screen max-w-3xl w-full px-5 mx-auto flex flex-col">
         <Header />
-        <main className="p-3 my-5">{children}</main>
+        <main className="px-3 py-8 my-5">{children}</main>
+        <Music />
         <Footer />
       </div>
     </div>
