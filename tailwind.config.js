@@ -1,7 +1,7 @@
-const { spacing, fontFamily } = require('tailwindcss/defaultTheme');
+const { fontFamily } = require('tailwindcss/defaultTheme');
 
 module.exports = {
-  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', './layouts/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
     fontFamily: {
@@ -9,13 +9,14 @@ module.exports = {
       mono: ['IBM Plex Mono', ...fontFamily.mono],
     },
     extend: {
+      colors: {
+        light: '#e1ede1',
+        dark: '#1e1a1a',
+      },
       typography: (theme) => ({
         default: {
           css: {
             color: theme('colors.gray.700'),
-            h1: {
-              color: theme('colors.gray.300'),
-            },
             a: {
               color: theme('colors.blue.500'),
             },
@@ -23,10 +24,8 @@ module.exports = {
         },
         dark: {
           css: {
-            color: theme('colors.gray.300'),
-            h1: {
-              color: theme('colors.gray.300'),
-            },
+            color: theme('colors.neutral.300'),
+
             a: {
               color: theme('colors.blue.500'),
             },

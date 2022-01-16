@@ -9,7 +9,6 @@ const handler = async (_: NextApiRequest, res: NextApiResponse) => {
   }
 
   const song = await response.json();
-  console.log(song);
   const isPlaying = song.is_playing;
   const track = song.item.name;
   const artist = song.item.artists.map((_artist) => _artist.name).join(', ');

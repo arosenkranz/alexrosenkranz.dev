@@ -22,12 +22,12 @@ const Music = () => {
   };
 
   return (
-    <section className="mt-auto px-3 py-8 border-t border-neutral-300 ">
+    <section className="mt-auto px-3 py-4 border-t border-r border-l border-dark dark:border-light ">
       <h2 className="text-2xl">Current Listening</h2>
       <div>
         {currentTrack?.isPlaying ? (
           <CustomLink href={currentTrack.spotifyUrl} className="italic">
-            {currentTrack.track} by {currentTrack.artist}
+            {currentTrack.track} <span className="not-italic">by {currentTrack.artist}</span>
           </CustomLink>
         ) : (
           'Nothing is playing.'

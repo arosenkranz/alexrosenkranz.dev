@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@mapbox/rehype-prism": "^0.7.0",
-    "@mdx-js/loader": "^0.15.4",
+    "@mdx-js/loader": "^1.6.22",
     "@mdx-js/mdx": "^0.15.4",
     "@mdx-js/react": "^1.6.22",
     "@next/mdx": "^12.0.7",

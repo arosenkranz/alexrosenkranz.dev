@@ -14,7 +14,7 @@ type LayoutProps = {
 
 export default function PageContainer({ pageTitle, description, previewImage, type, children }: LayoutProps) {
   return (
-    <div className="bg-neutral-100 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-100 transition-all min-h-screen flex flex-col">
+    <div className="bg-light text-dark dark:bg-dark dark:text-light transition-all min-h-screen flex flex-col">
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />

@@ -10,7 +10,7 @@ function MobileNavItem({ href, text }: { href: string; text: string }) {
       <Link href={href}>
         <a
           className={cn(
-            'p-4 border-b border-neutral-800 dark:border-neutral-100 last:border-0 hover:bg-neutral-800 hover:text-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-neutral-800 transition-background',
+            'p-4 border-b border-dark dark:border-light last:border-0 hover:bg-dark hover:text-light dark:hover:bg-light dark:hover:text-dark transition-background',
           )}
         >
           {text}
@@ -54,12 +54,12 @@ export default function MobileMenu({ items }: { items: MenuItem[] }) {
 
       <div
         className={cn(
-          'fixed h-0 top-[63px] left-0 w-full z-50 transition-all duration-1000 ease-in-out bg-neutral-100 dark:bg-neutral-800 ',
+          'fixed h-0 top-[63px] left-0 w-full z-50 transition-all duration-1000 ease-in-out bg-light dark:bg-dark ',
           isOpen ? 'h-screen translate-x-0' : ' translate-x-[-120%]',
         )}
       >
         {isOpen && (
-          <div className="flex flex-col w-11/12 mx-auto">
+          <div className="flex flex-col w-full px-3 mx-auto">
             {items.map((item, i) => (
               <MobileNavItem key={item.href} href={item.href} text={item.text} />
             ))}

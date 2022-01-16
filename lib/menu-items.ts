@@ -5,10 +5,10 @@ export const menuItems: MenuItem[] = [
     text: 'Home',
     href: '/',
   },
-  {
-    text: 'About',
-    href: '/about',
-  },
+  // {
+  //   text: 'About',
+  //   href: '/about',
+  // },
   {
     text: 'Work',
     href: '/work',

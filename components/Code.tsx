@@ -24,7 +24,7 @@ export default function Code(props: { className: string; children: ReactNode[] }
       <span ref={ref}>{props.children}</span>
       <div className="w-full flex">
         <button
-          className="text-sm ml-auto px-2 py-1 rounded-sm text-neutral-800 bg-neutral-100 hover:text-neutral-900 hover:bg-neutral-100 transition-colors duration-200"
+          className="text-sm ml-auto px-2 py-1 rounded-sm text-dark bg-light hover:text-dark hover:bg-light transition-colors duration-200"
           onClick={handleCopy}
         >
           {isCopied ? 'Copied!' : 'Copy'}
