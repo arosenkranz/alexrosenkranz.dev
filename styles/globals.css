@@ -21,7 +21,7 @@ h6 {
 }
 
 p {
-  @apply text-lg my-5 leading-relaxed;
+  @apply text-base my-5 leading-relaxed;
 }
 
 p > a {
