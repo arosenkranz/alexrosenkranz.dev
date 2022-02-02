@@ -20,11 +20,11 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
           <a href="https://datadoghq.com" target="_blank" rel="noreferrer noopener">
             Datadog
           </a>{' '}
-          on the community team, where I help users learn how to use Datadog tools and services to improve their
-          observability practices.
+          on the community team, where I help users learn how to use Datadog tools and services to improve their own
+          applications and deliver optimal user experiences.
         </p>
         <p>
-          I enjoy teaching about web development and design, curating{' '}
+          I enjoy teaching about web development and all things JavaScript, curating{' '}
           <a href="https://open.spotify.com/user/alexrosenkranz" target="_blank" rel="noopener noreferrer">
             Spotify playlists
           </a>

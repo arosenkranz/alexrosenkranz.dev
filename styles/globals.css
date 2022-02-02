@@ -25,7 +25,7 @@ p {
 }
 
 p > a {
-  @apply px-[3px] py-[4px] mx-[-3px] italic hover:text-light dark:hover:text-dark transition-all bg-gradient-to-tr from-dark to-dark dark:from-light dark:to-light bg-bottom bg-[length:1px_1px] bg-repeat-x hover:bg-[length:1px_100%];
+  @apply px-[2px] py-[3px] mx-[-3px] italic hover:text-light dark:hover:text-dark transition-all bg-gradient-to-tr from-dark to-dark dark:from-light dark:to-light bg-bottom bg-[length:1px_1px] bg-repeat-x hover:bg-[length:1px_100%];
 }
 
 .prose img {

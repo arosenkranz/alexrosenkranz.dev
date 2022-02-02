@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@code-hike/mdx": "^0.3.0-next.20",
     "@mapbox/rehype-prism": "^0.7.0",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/mdx": "^0.15.4",
