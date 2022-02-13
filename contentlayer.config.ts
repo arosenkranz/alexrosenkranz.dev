@@ -6,7 +6,6 @@ import rehypeSlug from 'rehype-slug';
 import rehypeCodeTitles from 'rehype-code-titles';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrism from 'rehype-prism-plus';
-import { remarkCodeHike } from '@code-hike/mdx';
 
 const computedFields: ComputedFields = {
   readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
@@ -49,9 +48,21 @@ const Post = defineDocumentType(() => ({
   computedFields,
 }));
 
+const Music = defineDocumentType(() => ({
+  name: 'Music',
+  filePathPattern: 'Music/**/*.mdx',
+  bodyType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    description: { type: 'string', required: false },
+    playlists: { type: 'json', required: true },
+  },
+  computedFields,
+}));
+
 export default makeSource({
   contentDirPath: 'content',
-  documentTypes: [Work, Post],
+  documentTypes: [Work, Post, Music],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [

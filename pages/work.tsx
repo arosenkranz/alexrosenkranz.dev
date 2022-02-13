@@ -14,7 +14,7 @@ export default function Work({ works }: InferGetStaticPropsType<typeof getStatic
 export function getStaticProps() {
   return {
     props: {
-      works: allWorks,
+      works: allWorks.filter((work) => work.public),
     },
   };
 }

@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "@code-hike/mdx": "^0.3.0-next.20",
+    "@headlessui/react": "^1.4.3",
+    "@heroicons/react": "^1.0.5",
     "@mapbox/rehype-prism": "^0.7.0",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/mdx": "^0.15.4",
@@ -46,6 +48,8 @@
     "eslint": "8.5.0",
     "eslint-config-next": "12.0.7",
     "postcss": "^8.4.5",
+    "prettier": "^2.5.1",
+    "prettier-plugin-tailwindcss": "^0.1.5",
     "typescript": "4.5.4"
   }
 }

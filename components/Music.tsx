@@ -22,7 +22,7 @@ const Music = () => {
   };
 
   return (
-    <section className="mt-auto px-3 py-4 border-t border-r border-l border-dark dark:border-light ">
+    <section className="px-3 py-4">
       <h2 className="text-2xl">Current Listening</h2>
       <div>
         {currentTrack?.isPlaying ? (

@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { getUserPlaylists } from 'lib/spotify-api';
 
-const handler = async (_: NextApiRequest, res: NextApiResponse) => {
+export default async function handler(_: NextApiRequest, res: NextApiResponse) {
   const response = await getUserPlaylists();
 
   if (response.status === 204 || response.status > 400) {
@@ -19,6 +19,4 @@ const handler = async (_: NextApiRequest, res: NextApiResponse) => {
         image: playlist.images[0],
       })),
   });
-};
-
-export default handler;
+}

@@ -28,7 +28,7 @@ function NavItem({ href, text }: { href: string; text: string }) {
       <a
         className={cn(
           isActive && 'bg-neutral-500 text-light  ',
-          'hidden md:inline-block font-light rounded-sm mr-2 px-3 py-1 text-dark dark:text-light hover:bg-dark hover:text-neutral-200 dark:hover:bg-light dark:hover:text-dark transition-all duration-200 ease-in-out',
+          'mr-2 hidden rounded-sm px-3 py-1 font-light text-dark transition-all duration-200 ease-in-out hover:bg-dark hover:text-neutral-200 dark:text-light dark:hover:bg-light dark:hover:text-dark md:inline-block',
         )}
       >
         {text}
@@ -46,7 +46,7 @@ function ThemeButton() {
     <button
       aria-label="Toggle Dark Mode"
       type="button"
-      className="ml-auto p-1 rounded-sm fill-dark dark:fill-light flex items-center justify-center hover:ring-1 ring-gray-200"
+      className="ml-auto flex items-center justify-center rounded-sm fill-dark p-1 ring-gray-200 hover:ring-1 dark:fill-light"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
       {mounted && (
@@ -73,7 +73,7 @@ function ThemeButton() {
                   d={d}
                   stroke="none"
                   className={cn(
-                    `transition-opacity ease-in-out duration-1000`,
+                    `transition-opacity duration-1000 ease-in-out`,
                     theme === 'light' ? 'opacity-100' : 'opacity-0',
                   )}
                   style={{
@@ -91,7 +91,7 @@ function ThemeButton() {
 
 export default function Header() {
   return (
-    <header className="py-4 border-b text-xl border-dark dark:border-light">
+    <header className="border-b border-dark py-4 text-xl dark:border-light">
       <nav className="flex flex-nowrap items-center font-mono font-light italic">
         <MobileMenu items={menuItems} />
         {menuItems.map((item: MenuItem) => (

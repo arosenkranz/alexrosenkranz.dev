@@ -52,3 +52,13 @@ export async function getUserPlaylists() {
     },
   });
 }
+
+export async function getSinglePlaylist(playlistId: string) {
+  const { access_token } = await getAccessToken();
+
+  return fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+  });
+}
