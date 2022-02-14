@@ -55,7 +55,7 @@ const Music = defineDocumentType(() => ({
   fields: {
     title: { type: 'string', required: true },
     description: { type: 'string', required: false },
-    playlists: { type: 'json', required: true },
+    playlists: { type: 'json', required: true, array: true },
   },
   computedFields,
 }));

@@ -6,9 +6,7 @@ module.exports = withContentlayer()({
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: [
-      'i.scdn.co', // Spotify Album Art
-    ],
+    domains: ['i.scdn.co', 'mosaic.scdn.co'],
   },
   experimental: { esmExternals: true },
 });
