@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  @apply font-mono font-normal text-base;
+  @apply font-mono text-base font-normal;
 }
 
 h1,
@@ -21,11 +21,11 @@ h6 {
 }
 
 p {
-  @apply text-base my-5 leading-relaxed;
+  @apply my-5 text-base leading-relaxed;
 }
 
 p > a {
-  @apply px-[2px] py-[3px] mx-[-3px] italic hover:text-light dark:hover:text-dark transition-all bg-gradient-to-tr from-dark to-dark dark:from-light dark:to-light bg-bottom bg-[length:1px_1px] bg-repeat-x hover:bg-[length:1px_100%];
+  @apply mx-[-3px] bg-gradient-to-tr from-dark to-dark bg-[length:1px_1px] bg-bottom bg-repeat-x px-[2px] py-[3px] italic transition-all hover:bg-[length:1px_100%] hover:text-light dark:from-light dark:to-light dark:hover:text-dark;
 }
 
 .prose img {
@@ -38,13 +38,13 @@ p > a {
 }
 
 .rehype-code-title {
-  @apply mt-5 px-4 py-2 rounded-t-md inline-block font-mono text-base text-neutral-800 bg-neutral-300 border border-b-0 border-neutral-800   dark:border-neutral-100;
+  @apply mt-5 inline-block rounded-t-md border border-b-0 border-neutral-800 bg-neutral-300 px-4 py-2 font-mono text-base text-neutral-800   dark:border-neutral-100;
 }
 
 .rehype-code-title + pre {
-  @apply !mt-0 !mb-5 border border-neutral-800 dark:border-neutral-100 rounded-b-md rounded-tr-md;
+  @apply !mt-0 !mb-5 rounded-b-md rounded-tr-md border border-neutral-800 dark:border-neutral-100;
 }
 
 .highlight-line {
-  @apply block px-4 -mx-4 border-l-8 border-neutral-100 bg-neutral-100 bg-opacity-5;
+  @apply -mx-4 block border-l-8 border-neutral-100 bg-neutral-100 bg-opacity-5 px-4;
 }

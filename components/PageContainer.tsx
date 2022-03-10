@@ -30,9 +30,9 @@ export default function PageContainer({ pageTitle, description, previewImage, ty
         <title>{pageTitle}</title>
       </Head>
 
-      <div className="mx-auto flex min-h-screen w-full max-w-3xl flex-col px-5">
+      <div className="mx-auto flex min-h-screen w-full max-w-3xl flex-col">
         <Header />
-        <main className="my-5 mb-auto px-3 py-8">{children}</main>
+        <main className="my-5 mb-auto py-8">{children}</main>
         <Music />
         <Footer />
       </div>

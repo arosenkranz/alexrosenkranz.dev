@@ -27,8 +27,8 @@ function NavItem({ href, text }: { href: string; text: string }) {
     <Link href={href}>
       <a
         className={cn(
-          isActive && 'bg-neutral-500 text-light  ',
-          'mr-2 hidden rounded-sm px-3 py-1 font-light text-dark transition-all duration-200 ease-in-out hover:bg-dark hover:text-neutral-200 dark:text-light dark:hover:bg-light dark:hover:text-dark md:inline-block',
+          isActive ? 'bg-neutral-500 text-light' : 'text-dark',
+          'mr-2 hidden rounded-sm px-3 py-1 font-light  transition-all duration-200 ease-in-out hover:bg-dark hover:text-neutral-200 dark:text-light dark:hover:bg-light dark:hover:text-dark md:inline-block',
         )}
       >
         {text}

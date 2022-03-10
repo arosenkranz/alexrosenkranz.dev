@@ -10,7 +10,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return {
         id: playlist.id,
         name: playlist.name,
-        description: playlist.description,
         image: playlist.images[0],
         url: playlist.external_urls.spotify,
       };
