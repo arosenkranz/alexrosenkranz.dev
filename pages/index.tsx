@@ -30,7 +30,7 @@ export default function Home() {
         </section>
         <section className="flex flex-wrap justify-between">
           <Link href="/work" passHref>
-            <div className="group my-2 basis-full cursor-pointer border border-dashed border-dark p-3 dark:border-light ">
+            <div className="group my-2 basis-full cursor-pointer border border-dashed border-dark p-3 dark:border-light md:basis-[48%]">
               <a className="text-xl font-light italic">
                 See what I've worked on{' '}
                 <span className="relative inline-block transition-transform group-hover:translate-x-2">&rarr;</span>
