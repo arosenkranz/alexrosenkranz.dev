@@ -9,4 +9,8 @@ module.exports = withContentlayer()({
     domains: ['i.scdn.co', 'mosaic.scdn.co'],
   },
   experimental: { esmExternals: true },
+  target: 'serverless',
+  options: {
+    dist: 'out_publish',
+  },
 });
