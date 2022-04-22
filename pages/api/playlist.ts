@@ -2,7 +2,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { getSinglePlaylist } from 'lib/spotify-api';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const response = await getSinglePlaylist(req.query.id);
+  const { id } = req.query;
+  const response = await getSinglePlaylist(id as string);
   const playlist = await response.json();
   return res.status(200).json({
     id: playlist.id,

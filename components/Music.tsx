@@ -3,7 +3,9 @@ import fetcher from 'lib/fetcher';
 import CustomLink from 'components/CustomLink';
 
 const Music = () => {
-  const { data: currentTrack, error: trackError } = useSWR('/api/now-playing', fetcher, { refreshInterval: 1000 * 20 });
+  const { data: currentTrack, error: trackError }: any = useSWR('/api/now-playing', fetcher, {
+    refreshInterval: 1000 * 20,
+  });
 
   return (
     <section className="mx-auto w-full max-w-3xl px-3 py-4">
