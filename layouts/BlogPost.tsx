@@ -11,7 +11,7 @@ export default function BlogPost({ post }: { post: Post }) {
 
   return (
     <article>
-      <div className=" mb-8 w-full max-w-prose px-3 md:p-0">
+      <div className=" mb-8 w-full max-w-prose">
         <h1 className="text-6xl">{post.title}</h1>
         <h3 className="inline-block bg-dark p-1 text-xl text-light dark:bg-light dark:text-dark">
           {post.category} {date && { date }}
