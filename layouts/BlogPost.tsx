@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import Image from 'next/image';
 import { useMDXComponent } from 'next-contentlayer/hooks';
-import type { Post } from '.contentlayer/types';
+import { Post } from 'contentlayer/generated';
 
 import components from 'components/MDXComponents';
 
