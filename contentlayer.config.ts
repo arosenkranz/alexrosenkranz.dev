@@ -5,7 +5,10 @@ import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeCodeTitles from 'rehype-code-titles';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypePrism from 'rehype-prism-plus';
+import { remarkCodeHike } from '@code-hike/mdx';
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const theme = require('shiki/themes/vitesse-dark.json');
 
 const computedFields: ComputedFields = {
   readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
@@ -26,10 +29,12 @@ const Work = defineDocumentType(() => ({
   fields: {
     title: { type: 'string', required: true },
     description: { type: 'string', required: false },
+    date: { type: 'string', required: false },
     builtWith: { type: 'json', required: false },
     deployedUrl: { type: 'string', required: false },
     githubUrl: { type: 'string', required: false },
     public: { type: 'boolean', required: false },
+    order: { type: 'number', required: true },
   },
   computedFields,
 }));
@@ -40,7 +45,9 @@ const Post = defineDocumentType(() => ({
   bodyType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
-    date: { type: 'date', required: true },
+    date: { type: 'date', required: false },
+    category: { type: 'string', required: false },
+    feature: { type: 'boolean', required: false },
     description: { type: 'string', required: true },
     image: { type: 'string', required: false },
     tags: { type: 'json', required: false },
@@ -64,11 +71,11 @@ export default makeSource({
   contentDirPath: 'content',
   documentTypes: [Work, Post, Music],
   mdx: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, [remarkCodeHike, { theme }]],
     rehypePlugins: [
       rehypeSlug,
       rehypeCodeTitles,
-      rehypePrism,
+
       [
         rehypeAutolinkHeadings,
         {

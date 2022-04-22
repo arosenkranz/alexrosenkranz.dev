@@ -91,7 +91,7 @@ function ThemeButton() {
 
 export default function Header() {
   return (
-    <header className="border-b border-dark py-4 text-xl dark:border-light">
+    <header className="mx-auto w-full max-w-3xl border-b border-dark py-4 text-xl dark:border-light">
       <nav className="flex flex-nowrap items-center font-mono font-light italic">
         <MobileMenu items={menuItems} />
         {menuItems.map((item: MenuItem) => (

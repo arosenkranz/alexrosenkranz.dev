@@ -1,69 +1,28 @@
 import type { Work } from '.contentlayer/types';
+import WorkItem from 'components/WorkItem';
 
 export default function WorkList({ works }: { works: Work[] }) {
   return (
     <>
-      <h1 className="text-6xl">Work</h1>
-      <p>
-        Since I primarily work in the field of technical curriculum development, I find it important (and exciting) to
-        stay up to date with new technologies, trends, and techniques in software development. Below are some of the
-        projects I've worked on.
-      </p>
-      <p>
-        I enjoy teaching myself new skills and tools just as much as I enjoy teaching others, so some of these projects
-        may not be as polished as others. I find value in all of my projects, finished or not, because I always learn at
-        least one new thing from each.
-      </p>
+      <div className="">
+        <h1 className="mb-3 text-6xl">Work</h1>
+        <p>
+          Since I primarily work in the field of technical curriculum development, I find it important (and exciting) to
+          stay up to date with new technologies, trends, and techniques in software development. Below are some of the
+          projects I've worked on.
+        </p>
+        <p>
+          I enjoy teaching myself new skills and tools just as much as I enjoy teaching others, so some of these
+          projects may not be as polished as others. I find value in all of my projects, finished or not, because I
+          always learn at least one new thing from each.
+        </p>
+      </div>
       <div>
-        {works.map((work) => (
-          <div key={work._id} className="my-10 bg-dark bg-opacity-10 p-4 dark:bg-light dark:bg-opacity-10 ">
-            <div className="mb-1 flex flex-wrap items-center justify-between">
-              <h2 className="basis-full text-2xl underline underline-offset-1 md:basis-9/12">{work.title}</h2>
-              <div className="basis-full py-2 px-3 md:basis-3/12  md:text-right">
-                {work.deployedUrl && (
-                  <a
-                    className="underline underline-offset-2"
-                    href={work.deployedUrl}
-                    rel="noreferrer noopener"
-                    target="_blank"
-                  >
-                    Site
-                  </a>
-                )}
-
-                {work.githubUrl && work.deployedUrl && <span className="inline-block px-2">/</span>}
-
-                {work.githubUrl && (
-                  <a
-                    className="underline underline-offset-2"
-                    href={work.githubUrl}
-                    rel="noreferrer noopener"
-                    target="_blank"
-                  >
-                    Repo
-                  </a>
-                )}
-              </div>
-            </div>
-
-            <div className="my-2 mb-0 grid grid-cols-12 items-baseline gap-2 ">
-              <div className="col-span-full md:col-span-3">
-                <h3 className=" text-normal font-normal">Built With:</h3>
-              </div>
-              <ul className="text-normal col-span-full flex flex-wrap md:col-span-9">
-                {work.builtWith.map((item: string, i: number, arr: string[]) => (
-                  <li key={item} className="">
-                    {item}
-                    {i < arr.length - 1 && <span className="inline-block px-2">/</span>}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <p className="mt-4 border-t border-dotted border-dark py-4 text-base dark:border-light">
-              {work.description}
-            </p>
-          </div>
-        ))}
+        {works
+          .sort((a, b) => a.order - b.order)
+          .map((work) => (
+            <WorkItem key={work._id} {...work} />
+          ))}
       </div>
     </>
   );

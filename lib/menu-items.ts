@@ -17,10 +17,10 @@ export const menuItems: MenuItem[] = [
     text: 'Blog',
     href: '/blog',
   },
-  {
-    text: 'Music',
-    href: '/music',
-  },
+  // {
+  //   text: 'Music',
+  //   href: '/music',
+  // },
 ];
 
 export default menuItems;

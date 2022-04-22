@@ -7,9 +7,7 @@ import BlogPost from 'layouts/BlogPost';
 export default function Post({ post }: { post: Post }) {
   return (
     <PageContainer pageTitle={post.title} description={post.description} type="article">
-      <article className="prose-neutral">
-        <BlogPost post={post} />
-      </article>
+      <BlogPost post={post} />
     </PageContainer>
   );
 }
@@ -23,6 +21,5 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const post = allPosts.find((post) => post.slug === params.slug);
-
   return { props: { post } };
 }

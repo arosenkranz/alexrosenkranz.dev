@@ -25,7 +25,7 @@ export default function MobileMenu({ items }: { items: MenuItem[] }) {
 
   return (
     <div className="visible md:hidden">
-      <button className="relative top-1" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Menu">
+      <button className="relative top-1 left-5" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Menu">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="30"

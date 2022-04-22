@@ -14,6 +14,10 @@ const links: { label: string; url: string }[] = [
     url: 'https://open.spotify.com/user/alexrosenkranz',
   },
   {
+    label: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/alexrosenkranz',
+  },
+  {
     label: 'Email',
     url: 'mailto:alexrosenkranz@gmail.com',
   },
@@ -21,7 +25,7 @@ const links: { label: string; url: string }[] = [
 
 export default function Footer() {
   return (
-    <footer className="mb-4">
+    <footer className="mx-auto mb-4 w-full max-w-3xl">
       <ul className="flex w-full flex-wrap items-center border-t border-dark py-2 dark:border-light ">
         {links.map(({ label, url }) => (
           <CustomLink

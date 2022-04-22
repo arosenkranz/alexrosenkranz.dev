@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import CustomLink from 'components/CustomLink';
-import Code from 'components/Code';
+import Playlist from 'components/Playlist';
 
 const MDXComponents = {
   Image,
   a: CustomLink,
-  code: Code,
+  Playlist,
 };
 
 export default MDXComponents;

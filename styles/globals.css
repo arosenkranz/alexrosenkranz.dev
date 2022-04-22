@@ -37,14 +37,32 @@ p > a {
   margin-bottom: 1.25em !important;
 }
 
-.rehype-code-title {
-  @apply mt-5 inline-block rounded-t-md border border-b-0 border-neutral-800 bg-neutral-300 px-4 py-2 font-mono text-base text-neutral-800   dark:border-neutral-100;
+.post-wrapper {
+  display: grid;
+  grid-template-columns:
+    1fr
+    min(80ch, 100%)
+    1fr;
 }
 
-.rehype-code-title + pre {
-  @apply !mt-0 !mb-5 rounded-b-md rounded-tr-md border border-neutral-800 dark:border-neutral-100;
+.post-wrapper > * {
+  grid-column: 2;
 }
 
-.highlight-line {
-  @apply -mx-4 block border-l-8 border-neutral-100 bg-neutral-100 bg-opacity-5 px-4;
+.full-bleed {
+  width: 100%;
+  grid-column: 1 / 4;
+}
+
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+}
+
+.circle {
+  @apply my-12 mx-1 h-4 w-4 rounded-full bg-dark dark:bg-light;
 }
