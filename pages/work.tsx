@@ -1,5 +1,5 @@
 import type { InferGetStaticPropsType } from 'next';
-import { allWorks } from '.contentlayer/data';
+import { allWorks } from 'contentlayer/generated';
 import PageContainer from 'components/PageContainer';
 import WorkList from 'layouts/WorkList';
 

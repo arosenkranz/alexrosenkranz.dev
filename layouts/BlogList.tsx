@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { format } from 'date-fns';
-import { Post } from '.contentlayer/types';
+import { Post } from 'contentlayer/generated';
 
 export default function BlogList({ posts }: { posts: Post[] }) {
   return (

@@ -1,4 +1,4 @@
-import type { Work } from '.contentlayer/types';
+import type { Work } from 'contentlayer/generated';
 
 export default function WorkItem({ _id, title, deployedUrl, githubUrl, builtWith, description }: Work) {
   return (
