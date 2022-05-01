@@ -25,7 +25,7 @@ const computedFields: ComputedFields = {
 const Work = defineDocumentType(() => ({
   name: 'Work',
   filePathPattern: 'Work/**/*.mdx',
-  bodyType: 'mdx',
+  contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
     description: { type: 'string', required: false },
@@ -42,7 +42,7 @@ const Work = defineDocumentType(() => ({
 const Post = defineDocumentType(() => ({
   name: 'Post',
   filePathPattern: 'Posts/**/*.mdx',
-  bodyType: 'mdx',
+  contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
     date: { type: 'date', required: false },
@@ -55,27 +55,13 @@ const Post = defineDocumentType(() => ({
   computedFields,
 }));
 
-const Music = defineDocumentType(() => ({
-  name: 'Music',
-  filePathPattern: 'Music/**/*.mdx',
-  bodyType: 'mdx',
-  fields: {
-    title: { type: 'string', required: true },
-    description: { type: 'string', required: false },
-    playlists: { type: 'json', required: true, array: true },
-  },
-  computedFields,
-}));
-
 export default makeSource({
   contentDirPath: 'content',
-  documentTypes: [Work, Post, Music],
+  documentTypes: [Work, Post],
   mdx: {
-    remarkPlugins: [remarkGfm, [remarkCodeHike, { theme }]],
+    remarkPlugins: [[remarkCodeHike, { theme }]],
     rehypePlugins: [
       rehypeSlug,
-      rehypeCodeTitles,
-
       [
         rehypeAutolinkHeadings,
         {

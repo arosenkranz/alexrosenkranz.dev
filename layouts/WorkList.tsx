@@ -1,4 +1,4 @@
-import type { Work } from '.contentlayer/types';
+import type { Work } from 'contentlayer/generated';
 import WorkItem from 'components/WorkItem';
 
 export default function WorkList({ works }: { works: Work[] }) {

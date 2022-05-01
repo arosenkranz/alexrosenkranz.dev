@@ -1,10 +1,9 @@
-import type { InferGetStaticPropsType } from 'next';
-import { allPosts } from '.contentlayer/data';
+import { allPosts, Post } from 'contentlayer/generated';
 import BlogList from 'layouts/BlogList';
 
 import PageContainer from 'components/PageContainer';
 
-export default function Blog({ posts }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Blog({ posts }: { posts: Post[] }) {
   return (
     <PageContainer pageTitle="Blog" description="" type="page">
       <BlogList posts={posts} />
