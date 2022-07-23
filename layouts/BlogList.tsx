@@ -13,7 +13,7 @@ export default function BlogList({ posts }: { posts: Post[] }) {
             className="col-span-full mb-5 max-w-prose border-b border-dotted border-dark pb-5 last:border-0 dark:border-light"
           >
             <Link href={`/blog/${post.slug}`}>
-              <a className="mb-2 text-3xl font-thin ">{post.title}</a>
+              <a className="mb-2 text-3xl font-extralight italic">{post.title}</a>
             </Link>
             <h3 className="text-sm">
               {post.category && (

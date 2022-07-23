@@ -4,7 +4,7 @@ export default function WorkItem({ _id, title, deployedUrl, githubUrl, builtWith
   return (
     <div key={_id} className="my-10 bg-dark bg-opacity-10 p-4 dark:bg-light dark:bg-opacity-10 ">
       <div className="mb-1 flex flex-wrap items-center justify-between">
-        <h2 className="basis-full text-2xl font-light italic underline underline-offset-1 md:basis-9/12">{title}</h2>
+        <h2 className="basis-full text-2xl italic underline underline-offset-1 md:basis-9/12">{title}</h2>
         <div className="basis-full py-2 px-3 md:basis-3/12  md:text-right">
           {deployedUrl && (
             <a className="underline underline-offset-2" href={deployedUrl} rel="noreferrer noopener" target="_blank">
