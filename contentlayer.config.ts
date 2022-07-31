@@ -45,6 +45,7 @@ const Post = defineDocumentType(() => ({
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
+    playlistId: { type: 'string', required: false },
     date: { type: 'date', required: false },
     category: { type: 'string', required: false },
     feature: { type: 'boolean', required: false },

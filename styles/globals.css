@@ -37,23 +37,6 @@ p > a {
   margin-bottom: 1.25em !important;
 }
 
-.post-wrapper {
-  display: grid;
-  grid-template-columns:
-    1fr
-    min(80ch, 100%)
-    1fr;
-}
-
-.post-wrapper > * {
-  grid-column: 2;
-}
-
-.full-bleed {
-  width: 100%;
-  grid-column: 1 / 4;
-}
-
 @layer utilities {
   .animation-delay-200 {
     animation-delay: 0.2s;
