@@ -49,7 +49,7 @@ const Post = defineDocumentType(() => ({
     date: { type: 'date', required: false },
     category: { type: 'string', required: false },
     feature: { type: 'boolean', required: false },
-    description: { type: 'string', required: true },
+    description: { type: 'mdx', required: true },
     image: { type: 'string', required: false },
     tags: { type: 'json', required: false },
   },

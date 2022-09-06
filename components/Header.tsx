@@ -28,7 +28,7 @@ function NavItem({ href, text }: { href: string; text: string }) {
       <a
         className={cn(
           isActive ? 'bg-neutral-500 text-light' : 'text-dark',
-          'mr-2 hidden rounded-sm px-3 py-1 font-light  transition-all duration-200 ease-in-out hover:bg-dark hover:text-neutral-200 dark:text-light dark:hover:bg-light dark:hover:text-dark md:inline-block',
+          'mr-2 hidden rounded-sm px-3 py-1 font-light transition-all duration-200 ease-in-out hover:bg-dark hover:text-neutral-200 dark:text-light dark:hover:bg-light dark:hover:text-dark md:inline-block',
         )}
       >
         {text}
@@ -92,7 +92,7 @@ function ThemeButton() {
 export default function Header() {
   return (
     <header className="mx-auto w-full max-w-3xl border-b border-dark py-4 text-xl dark:border-light">
-      <nav className="flex flex-nowrap items-center font-mono font-light italic">
+      <nav className="flex flex-nowrap items-center font-mono italic">
         <MobileMenu items={menuItems} />
         {menuItems.map((item: MenuItem) => (
           <NavItem key={item.href} href={item.href} text={item.text} />

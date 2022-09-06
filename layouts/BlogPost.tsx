@@ -7,32 +7,37 @@ import components from 'components/MDXComponents';
 
 export default function BlogPost({ post }: { post: Post }) {
   const Component = useMDXComponent(post.body.code);
+  const Description = useMDXComponent(post.description.code);
   const date = post.date ? format(new Date(post.date), 'MMMM dd, yyyy') : '';
-  console.log(post);
   return (
     <article>
-      <div className="mb-8 w-full">
+      <div className="w-full">
         <div className="group relative block">
           {post.image && (
-            <div className="absolute inset-0 max-h-72">
+            <div className="absolute inset-0 max-h-72 rounded-xl">
+              <div className="relative z-10 h-72 max-h-72 w-full rounded-xl bg-dark bg-opacity-50"></div>
               <Image
                 src={post.image}
                 alt={post.title}
-                className="w-100 relative z-0 h-96 max-h-96 scale-110 grayscale transition-all duration-500 group-hover:scale-100 group-hover:filter-none"
+                className="w-100 relative z-0 h-72 max-h-72 rounded-xl grayscale transition-all duration-500  group-hover:filter-none"
                 layout="fill"
                 objectFit="cover"
                 objectPosition="center"
               />
             </div>
           )}
-          <div className="relative z-10 flex h-full w-full flex-col bg-dark bg-opacity-50 p-4">
+          <div className="relative z-10 flex h-full w-full flex-col  p-4">
             <div>
               <h3 className="text-normal inline-block bg-dark p-1 text-sm text-light">
                 {post.category} {date && { date }}
               </h3>
             </div>
             <h1 className="text-5xl font-extralight italic text-light">{post.title}</h1>
-            {post.description && <p className="text-light">{post.description}</p>}
+            {post.description && (
+              <p className="m-0 text-light">
+                <Description />
+              </p>
+            )}
 
             {/* <div className="mt-2 flex flex-wrap transition">
               {post.tags &&

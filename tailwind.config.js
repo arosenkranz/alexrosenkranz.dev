@@ -10,8 +10,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        light: '#fefefe',
-        dark: '#1e1a1a',
+        light: '#f7fdfd',
+        dark: '#0c0606',
       },
       animation: {
         loader: 'loader 0.6s infinite alternate',
