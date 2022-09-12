@@ -18,7 +18,17 @@ const computedFields: ComputedFields = {
   },
   slug: {
     type: 'string',
-    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ''),
+    // remove leading numbers and mdx extension
+    resolve: (doc) =>
+      doc._raw.sourceFileName
+        .replace(/\.mdx$/, '')
+        .split('-')
+        .slice(1)
+        .join('-'),
+  },
+  order: {
+    type: 'number',
+    resolve: (doc) => parseInt(doc._raw.sourceFileName.split('-')[0]),
   },
 };
 
@@ -34,7 +44,6 @@ const Work = defineDocumentType(() => ({
     deployedUrl: { type: 'string', required: false },
     githubUrl: { type: 'string', required: false },
     public: { type: 'boolean', required: false },
-    order: { type: 'number', required: true },
   },
   computedFields,
 }));
@@ -45,12 +54,14 @@ const Post = defineDocumentType(() => ({
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
+    playlistId: { type: 'string', required: false },
     date: { type: 'date', required: false },
     category: { type: 'string', required: false },
     feature: { type: 'boolean', required: false },
-    description: { type: 'string', required: true },
+    description: { type: 'mdx', required: true },
     image: { type: 'string', required: false },
     tags: { type: 'json', required: false },
+    meta: { type: 'json', required: false },
   },
   computedFields,
 }));

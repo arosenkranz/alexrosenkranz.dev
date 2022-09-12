@@ -48,7 +48,7 @@ export default function Playlist({ id, genres, children }: TPlaylist) {
               objectPosition="center"
             />
             <div className="absolute z-10 flex h-full w-full flex-col bg-dark bg-opacity-50 p-4">
-              <h3 className="text-5xl font-extralight italic text-light opacity-75 mix-blend-color-dodge transition-opacity group-hover:opacity-100">
+              <h3 className="text-5xl text-light opacity-75 mix-blend-color-dodge transition-opacity group-hover:opacity-100">
                 {playlist.name}
               </h3>
               <div className="mt-2 flex flex-wrap transition">

@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  @apply font-mono text-base font-light;
+  @apply font-mono;
 }
 
 h1,
@@ -17,15 +17,19 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-mono font-extralight italic;
+  @apply font-mono font-light;
 }
 
 p {
-  @apply my-5 text-base leading-relaxed;
+  @apply my-5 leading-relaxed;
 }
 
 p > a {
   @apply mx-[-3px] bg-gradient-to-tr from-dark to-dark bg-[length:1px_1px] bg-bottom bg-repeat-x px-[2px] py-[3px] italic transition-all hover:bg-[length:1px_100%] hover:text-light dark:from-light dark:to-light dark:hover:text-dark;
+}
+
+p.description > a {
+  @apply mx-[-3px] bg-gradient-to-tr from-light to-light bg-[length:1px_1px] bg-bottom bg-repeat-x px-[2px] py-[3px] italic transition-all hover:bg-[length:1px_100%] hover:text-dark dark:from-light dark:to-light dark:hover:text-dark;
 }
 
 .prose img {
@@ -35,23 +39,6 @@ p > a {
 .prose > :first-child {
   margin-top: 1.25em !important;
   margin-bottom: 1.25em !important;
-}
-
-.post-wrapper {
-  display: grid;
-  grid-template-columns:
-    1fr
-    min(80ch, 100%)
-    1fr;
-}
-
-.post-wrapper > * {
-  grid-column: 2;
-}
-
-.full-bleed {
-  width: 100%;
-  grid-column: 1 / 4;
 }
 
 @layer utilities {

@@ -31,7 +31,7 @@ export default function Footer() {
           <CustomLink
             key={url}
             href={url}
-            className="mr-3 px-3 py-1 text-base font-normal hover:bg-dark hover:text-light dark:hover:bg-light dark:hover:text-dark"
+            className="mr-3 rounded-xl px-3 py-1 text-base transition-colors duration-150 hover:bg-dark hover:text-light dark:hover:bg-light dark:hover:text-dark"
           >
             {label}
           </CustomLink>
