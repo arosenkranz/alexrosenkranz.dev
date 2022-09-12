@@ -1,12 +1,14 @@
 const { withContentlayer } = require('next-contentlayer');
 
-/** @type {import('next').NextConfig} */
-module.exports = withContentlayer({
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   images: {
     domains: ['i.scdn.co', 'mosaic.scdn.co'],
   },
-  options: {
-    dist: 'out_publish',
-  },
-});
+  distDir: 'out_publish',
+};
+
+module.exports = withContentlayer(nextConfig);

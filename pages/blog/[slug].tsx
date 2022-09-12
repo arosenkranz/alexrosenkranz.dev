@@ -25,7 +25,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }: { params: { slug: string } }) {
   const post = allPosts.find((post: TPost) => post.slug === params.slug);
-  // if playlist, get album info
   if (post?.playlistId) {
     const response = await getSinglePlaylist(post.playlistId);
     const spotifyData = await response.json();

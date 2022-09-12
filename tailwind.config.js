@@ -6,12 +6,13 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['IBM Plex Sans', ...fontFamily.sans],
+      condensed: ['IBM Plex Sans Condensed', ...fontFamily.sans],
       mono: ['IBM Plex Mono', ...fontFamily.mono],
     },
     extend: {
       colors: {
-        light: '#f7fdfd',
-        dark: '#0c0606',
+        light: '#D7D7D9',
+        dark: '#262626',
       },
       animation: {
         loader: 'loader 0.6s infinite alternate',

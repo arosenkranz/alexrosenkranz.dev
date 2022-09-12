@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  @apply font-mono text-lg font-light;
+  @apply font-mono;
 }
 
 h1,
@@ -17,11 +17,11 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-mono font-light italic;
+  @apply font-mono font-light;
 }
 
 p {
-  @apply my-5 text-base font-light leading-relaxed;
+  @apply my-5 leading-relaxed;
 }
 
 p > a {
