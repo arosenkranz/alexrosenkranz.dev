@@ -10,7 +10,7 @@ interface Props extends TPost {
 
 export default function Post({ post }: { post: Props }) {
   return (
-    <PageContainer pageTitle={post.title} description={post.description} type="article">
+    <PageContainer pageTitle={post.title} description={post.meta?.description || ''} type="article">
       <BlogPost post={post} />
     </PageContainer>
   );

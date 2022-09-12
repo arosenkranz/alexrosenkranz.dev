@@ -61,6 +61,7 @@ const Post = defineDocumentType(() => ({
     description: { type: 'mdx', required: true },
     image: { type: 'string', required: false },
     tags: { type: 'json', required: false },
+    meta: { type: 'json', required: false },
   },
   computedFields,
 }));
