@@ -8,7 +8,6 @@ const nextConfig = {
   images: {
     domains: ['i.scdn.co', 'mosaic.scdn.co'],
   },
-  distDir: 'out_publish',
 };
 
 module.exports = withContentlayer(nextConfig);
