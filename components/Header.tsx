@@ -27,8 +27,8 @@ function NavItem({ href, text }: { href: string; text: string }) {
     <Link href={href}>
       <a
         className={cn(
-          isActive ? 'bg-neutral-500 text-light' : 'text-dark',
-          'mr-2 hidden rounded-xl px-3 py-1 transition-all duration-200 ease-in-out hover:bg-dark hover:text-neutral-200 dark:text-light dark:hover:bg-light dark:hover:text-dark md:inline-block',
+          isActive ? 'bg-dark text-light dark:bg-light dark:text-dark' : 'dark:text-light',
+          'mr-2 hidden px-2 py-1 text-2xl font-normal text-dark transition-all duration-200 ease-in-out hover:bg-dark hover:text-light  dark:hover:bg-light dark:hover:text-dark md:inline-block',
         )}
       >
         {text}
@@ -46,7 +46,7 @@ function ThemeButton() {
     <button
       aria-label="Toggle Dark Mode"
       type="button"
-      className="ml-auto flex items-center justify-center rounded-sm fill-dark p-1 ring-gray-200 hover:ring-1 dark:fill-light"
+      className=" ml-auto mr-2 flex items-center justify-center fill-dark p-1  dark:fill-light"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
       {mounted && (
@@ -91,7 +91,7 @@ function ThemeButton() {
 
 export default function Header() {
   return (
-    <header className="mx-auto w-full max-w-3xl border-b border-dark py-4 text-xl dark:border-light">
+    <header className="mx-auto mt-2 w-full border-b border-dark py-4 pt-2 text-xl dark:border-light">
       <nav className="flex flex-nowrap items-center">
         <MobileMenu items={menuItems} />
         {menuItems.map((item: MenuItem) => (

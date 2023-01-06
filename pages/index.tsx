@@ -7,10 +7,10 @@ export default function Home() {
       description="Hi there! I'm Alex Rosenkranz, a developer, subject matter expert, educator, and technical writer with an interest in music and design—both digital and physical."
       type="page"
     >
-      <div className="mx-auto w-full max-w-3xl">
+      <div className="mx-auto w-full">
         <section className="mt-0 mb-12 max-w-prose">
           <h1 className="text-6xl">Alex Rosenkranz</h1>
-          <h2 className="text-xl italic">Technical Curriculum Developer</h2>
+          <h2 className="text-xl font-normal">Technical Curriculum Developer</h2>
           <p className="mt-5">
             Currently at{' '}
             <a href="https://datadoghq.com" target="_blank" rel="noreferrer noopener">
