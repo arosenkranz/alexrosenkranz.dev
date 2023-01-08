@@ -9,22 +9,22 @@ export default function Home() {
     >
       <div className="mx-auto w-full">
         <section className="mt-0 mb-12 max-w-prose">
-          <h1 className="text-6xl">Alex Rosenkranz</h1>
-          <h2 className="text-xl font-normal">Technical Curriculum Developer</h2>
+          <h1 className="text-6xl">alex rosenkranz</h1>
+          <h2 className="text-xl font-normal">technical training // software engineering // music collector</h2>
           <p className="mt-5">
-            Currently at{' '}
+            currently at{' '}
             <a href="https://datadoghq.com" target="_blank" rel="noreferrer noopener">
-              Datadog
+              datadog
             </a>{' '}
-            on the community team, where I help users understand how to best leverage Datadog's tools and services
+            on the community team, where i help users understand how to best leverage Datadog's tools and services
             through technical courses and workshops.
           </p>
           <p>
-            I spend most of my time staying up to date on new tech, curating my{' '}
+            i spend most of my time staying up to date on new tech, curating my{' '}
             <a href="https://open.spotify.com/user/alexrosenkranz" target="_blank" rel="noopener noreferrer">
-              Spotify playlists
+              spotify playlists
             </a>
-            , and complaining about house projects I haven't done yet.
+            , and complaining about house projects i haven't done yet.
           </p>
         </section>
       </div>

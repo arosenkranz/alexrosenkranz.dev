@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  @apply font-sans;
+  @apply font-sans text-lg proportional-nums;
 }
 
 h1,
@@ -21,7 +21,7 @@ h6 {
 }
 
 p {
-  @apply my-5 leading-relaxed;
+  @apply my-5 leading-normal;
 }
 
 p > a {
@@ -52,4 +52,8 @@ p.description > a {
 
 .circle {
   @apply my-12 mx-1 h-4 w-4 rounded-full bg-dark dark:bg-light;
+}
+
+.post-title {
+  font-size: clamp(1rem, 9.5vw, 4.5rem);
 }
