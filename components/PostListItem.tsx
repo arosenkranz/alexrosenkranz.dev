@@ -14,7 +14,7 @@ export default function PostListItem({ post }: { post: Post }) {
       <Link href={`/blog/${post.slug}`}>
         <a>
           {post.image && (
-            <div className="group group relative mb-5 h-64 w-full">
+            <div className="group group relative mb-5 h-96 w-full md:h-64">
               <Image
                 src={post.image}
                 alt={post.title}
@@ -24,9 +24,10 @@ export default function PostListItem({ post }: { post: Post }) {
                 className="transition-all duration-200 ease-in-out"
               />
               <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm transition-all duration-200 ease-in-out group-hover:backdrop-blur-0"></div>
-              <div className="absolute inset-0 flex flex-col items-start justify-center p-4 text-white">
+              <div className="absolute inset-0 flex flex-col items-start justify-end p-2 text-white">
+                {post.category && <h3 className="text-xl font-normal lowercase italic">{post.category}</h3>}
+
                 <h2 className="mb-0 text-5xl lowercase">{post.title}</h2>
-                {post.category && <h3 className="text-xl lowercase">{post.category}</h3>}
                 <Description components={descriptionComponents} />
                 {post.tags && (
                   <div className="flex flex-wrap">
