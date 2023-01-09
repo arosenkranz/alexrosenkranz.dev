@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  @apply font-mono;
+  @apply font-sans text-lg proportional-nums;
 }
 
 h1,
@@ -17,15 +17,15 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-mono font-light;
+  @apply font-sans font-semibold;
 }
 
 p {
-  @apply my-5 leading-relaxed;
+  @apply my-5 leading-normal;
 }
 
 p > a {
-  @apply mx-[-3px] bg-gradient-to-tr from-dark to-dark bg-[length:1px_1px] bg-bottom bg-repeat-x px-[2px] py-[3px] italic transition-all hover:bg-[length:1px_100%] hover:text-light dark:from-light dark:to-light dark:hover:text-dark;
+  @apply mx-[-1px] bg-gradient-to-tr from-dark to-dark bg-[length:1px_1px] bg-bottom bg-repeat-x px-[1px] py-[3px] transition-all hover:bg-[length:1px_100%] hover:text-light dark:from-light dark:to-light dark:hover:text-dark;
 }
 
 p.description > a {
@@ -52,4 +52,8 @@ p.description > a {
 
 .circle {
   @apply my-12 mx-1 h-4 w-4 rounded-full bg-dark dark:bg-light;
+}
+
+.post-title {
+  font-size: clamp(1rem, 9.5vw, 4.5rem);
 }

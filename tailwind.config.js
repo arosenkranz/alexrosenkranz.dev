@@ -5,14 +5,13 @@ module.exports = {
   darkMode: 'class',
   theme: {
     fontFamily: {
-      sans: ['IBM Plex Sans', ...fontFamily.sans],
-      condensed: ['IBM Plex Sans Condensed', ...fontFamily.sans],
+      sans: ['Inter', ...fontFamily.sans],
       mono: ['IBM Plex Mono', ...fontFamily.mono],
     },
     extend: {
       colors: {
-        light: '#D7D7D9',
-        dark: '#262626',
+        light: '#ffffff',
+        dark: '#000000',
       },
       animation: {
         loader: 'loader 0.6s infinite alternate',

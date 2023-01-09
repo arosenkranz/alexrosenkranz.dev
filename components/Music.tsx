@@ -8,8 +8,8 @@ const Music = () => {
   });
 
   return (
-    <section className="mx-auto w-full max-w-3xl px-3 py-4">
-      <h2 className="text-2xl">Current Listening</h2>
+    <section className="mx-auto w-full px-3 py-4 lowercase">
+      <h2 className="text-2xl">current listening</h2>
       <div>
         {currentTrack?.isPlaying ? (
           <CustomLink href={currentTrack.spotifyUrl} className="italic ">
