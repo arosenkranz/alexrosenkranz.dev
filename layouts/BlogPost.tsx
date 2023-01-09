@@ -51,7 +51,7 @@ export default function BlogPost({ post }: { post: Post }) {
         />
         {post.playlistId && (
           <iframe
-            src={`https://open.spotify.com/embed/playlist/${post.playlistId}?utm_source=generator&theme=0`}
+            src={`https://open.spotify.com/embed/playlist/${post.playlistId}?utm_source=generator`}
             width="100%"
             height="500"
             frameBorder="0"

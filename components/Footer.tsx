@@ -10,16 +10,24 @@ const links: { label: string; url: string }[] = [
     url: 'https://github.com/arosenkranz',
   },
   {
-    label: 'Spotify',
-    url: 'https://open.spotify.com/user/alexrosenkranz',
-  },
-  {
     label: 'LinkedIn',
     url: 'https://www.linkedin.com/in/alexrosenkranz',
   },
   {
     label: 'Email',
     url: 'mailto:alexrosenkranz@gmail.com',
+  },
+  {
+    label: 'Spotify',
+    url: 'https://open.spotify.com/user/alexrosenkranz',
+  },
+  {
+    label: 'Soundcloud',
+    url: 'https://soundcloud.com/krunz',
+  },
+  {
+    label: 'Mixcloud',
+    url: 'https://www.mixcloud.com/alexrosenkranz/',
   },
 ];
 
