@@ -39,6 +39,11 @@ export default defineConfig({
     },
   },
   scopedStyleStrategy: "where",
-  output: "hybrid",
-  adapter: vercel(),
+  output: "server",
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+    maxDuration: 30,
+  }),
 });
