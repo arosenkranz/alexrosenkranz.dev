@@ -4,6 +4,7 @@ import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
+import NowPlayingWrapper from "@components/NowPlaying";
 import Card from "@components/Card";
 import Pagination from "@components/Pagination.astro";
 import { SITE } from "@config";
@@ -44,6 +45,6 @@ const { currentPage, totalPages, paginatedPosts, tag, tagName } = Astro.props;
     }/`}
     nextUrl={`/tags/${tag}/${currentPage + 1}/`}
   />
-
+  <NowPlayingWrapper client:load />
   <Footer noMarginTop={totalPages > 1} />
 </Layout>

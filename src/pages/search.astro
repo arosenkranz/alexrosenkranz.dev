@@ -6,6 +6,7 @@ import Main from "@layouts/Main.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import SearchBar from "@components/Search";
+import NowPlayingWrapper from "@components/NowPlaying";
 import getSortedPosts from "@utils/getSortedPosts";
 
 // Retrieve all published articles
@@ -26,5 +27,6 @@ const searchList = sortedPosts.map(({ data, slug }) => ({
   <Main pageTitle="Search" pageDesc="Search any article ...">
     <SearchBar client:load searchList={searchList} />
   </Main>
+  <NowPlayingWrapper client:load />
   <Footer />
 </Layout>

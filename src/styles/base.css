@@ -10,7 +10,7 @@
     /* text */
     --color-text-base: 25, 25, 35;
     /* headings, highlights, accents */
-    --color-accent: 14, 151, 200;
+    --color-accent: 0, 139, 139;
     --color-card: 230, 230, 230;
     --color-card-muted: 205, 205, 205;
     --color-border: 236, 233, 233;
@@ -18,7 +18,7 @@
   html[data-theme="dark"] {
     --color-fill: 25, 25, 35;
     --color-text-base: 251, 254, 249;
-    --color-accent: 14, 151, 200;
+    --color-accent: 0, 255, 255;
     --color-card: 52, 63, 96;
     --color-card-muted: 138, 51, 2;
     --color-border: 65, 65, 55;
@@ -36,6 +36,16 @@
     @apply flex min-h-[100svh] flex-col bg-skin-fill font-sans text-skin-base 
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
   }
+  /* 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply ;
+  } */
+
   section,
   footer {
     @apply mx-auto max-w-3xl px-4;

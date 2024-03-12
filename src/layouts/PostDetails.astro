@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
+import NowPlayingWrapper from "@components/NowPlaying";
 import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
@@ -95,10 +96,9 @@ const layoutProps = {
         </svg>
         <span>Back to Top</span>
       </button>
-
-      <ShareLinks />
     </div>
   </main>
+  <NowPlayingWrapper client:load />
   <Footer />
 </Layout>
 
@@ -112,8 +112,7 @@ const layoutProps = {
 </style>
 
 <script is:inline>
-  /** Create a progress indicator
-   *  at the top */
+  // Create a progress indicator at the top
   function createProgressBar() {
     // Create the main container div
     const progressContainer = document.createElement("div");
@@ -133,8 +132,7 @@ const layoutProps = {
   }
   createProgressBar();
 
-  /** Update the progress bar
-   *  when user scrolls */
+  // Update the progress bar when user scrolls
   function updateScrollProgress() {
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
@@ -151,8 +149,7 @@ const layoutProps = {
   }
   document.addEventListener("scroll", updateScrollProgress);
 
-  /** Attaches links to headings in the document,
-   *  allowing sharing of sections easily */
+  // Attaches links to headings in the document, allowing sharing of sections easily
   function addHeadingLinks() {
     let headings = Array.from(document.querySelectorAll("h2, h3, h4, h5, h6"));
     for (let heading of headings) {
@@ -167,8 +164,7 @@ const layoutProps = {
   }
   addHeadingLinks();
 
-  /** Attaches copy buttons to code blocks in the document,
-   * allowing users to copy code easily. */
+  // Attaches copy buttons to code blocks in the document, allowing users to copy code easily.
   function attachCopyButtons() {
     let copyButtonLabel = "Copy";
     let codeBlocks = Array.from(document.querySelectorAll("pre"));
@@ -209,8 +205,7 @@ const layoutProps = {
   }
   attachCopyButtons();
 
-  /** Scrolls the document to the top when
-   * the "Back to Top" button is clicked. */
+  // Scrolls the document to the top when the "Back to Top" button is clicked.
   function backToTop() {
     document.querySelector("#back-to-top")?.addEventListener("click", () => {
       document.body.scrollTop = 0; // For Safari

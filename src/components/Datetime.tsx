@@ -20,7 +20,7 @@ export default function Datetime({
     <div className={`flex items-center opacity-80 ${className}`}>
       {modDatetime && modDatetime > pubDatetime ? (
         <span className={`italic ${size === "sm" ? "text-sm" : "text-base"}`}>
-          Updated:
+          Updated: &nbsp;
         </span>
       ) : (
         <span className="sr-only">Published:</span>
