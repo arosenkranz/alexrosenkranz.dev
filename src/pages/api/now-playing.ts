@@ -29,7 +29,7 @@ export const GET: APIRoute = async () => {
   const albumImageUrl = song.item.album.images[0].url;
   const spotifyUrl = song.item.external_urls.spotify;
 
-  const responseBody = {
+  const responseBody: TrackData = {
     track,
     artist,
     album,
@@ -42,7 +42,6 @@ export const GET: APIRoute = async () => {
     status: 200,
     headers: {
       "Content-Type": "application/json",
-      "Cache-Control": "public, s-maxage=60, stale-while-revalidate=30",
     },
   });
 };
