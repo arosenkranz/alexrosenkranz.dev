@@ -44,6 +44,6 @@ export default defineConfig({
     webAnalytics: {
       enabled: true,
     },
-    maxDuration: 30,
+    maxDuration: 10,
   }),
 });
