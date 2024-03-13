@@ -4,6 +4,8 @@ import Posts from "@layouts/Posts.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import getPagination from "@utils/getPagination";
 
+export const prerender = true;
+
 const posts = await getCollection("blog");
 
 const sortedPosts = getSortedPosts(posts);

@@ -4,7 +4,7 @@ import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
 
 export interface Props {
-  activeNav?: "posts" | "tags" | "likes" | "search";
+  activeNav?: "posts" | "tags" | "likes" | "search" | "about" | string;
 }
 
 const { activeNav } = Astro.props;
@@ -51,7 +51,12 @@ const { activeNav } = Astro.props;
           </li>
           <li>
             <a href="/likes/" class={activeNav === "likes" ? "active" : ""}>
-              Stuff I Like
+              Likes &amp; Interests
+            </a>
+          </li>
+          <li>
+            <a href="/about/" class={activeNav === "about" ? "active" : ""}>
+              About
             </a>
           </li>
           <li>
@@ -111,7 +116,7 @@ const { activeNav } = Astro.props;
     @apply relative flex w-full items-start justify-between p-4 sm:items-baseline sm:py-6;
   }
   .logo {
-    @apply absolute py-1 text-2xl font-semibold sm:static sm:text-5xl;
+    @apply absolute py-1 text-2xl font-bold sm:static sm:text-4xl;
   }
   .hamburger-menu {
     @apply self-end p-2 sm:hidden;

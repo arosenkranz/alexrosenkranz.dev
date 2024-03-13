@@ -37,5 +37,5 @@ const { currentPage, totalPages, paginatedPosts } = Astro.props;
     nextUrl={`/posts/${currentPage + 1}/`}
   />
   <NowPlayingWrapper client:load />
-  <Footer noMarginTop={totalPages > 1} />
+  <Footer noMarginTop={true} />
 </Layout>

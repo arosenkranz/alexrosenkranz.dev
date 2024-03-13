@@ -16,11 +16,11 @@ function NowPlaying() {
 
   return (
     <div className="mx-auto max-w-3xl">
-      <div className="align-start flex flex-col gap-1">
-        <div className="font-sans text-lg font-semibold">Now listening</div>
+      <div className="align-start flex flex-col gap-2">
+        <div className="font-sans text-2xl font-semibold">Now listening</div>
         <div className="flex items-center">
           {isLoading || !data ? (
-            <p className="text-normal">Nothing playing at the moment.</p>
+            <p className="text-normal">Nothing playing at the moment</p>
           ) : (
             <>
               <img
@@ -30,8 +30,8 @@ function NowPlaying() {
               />
               <div className="ml-4">
                 <a href={data.url} target="_blank" rel="noreferrer">
-                  <p className="text-normal font-bold">{data.track}</p>
-                  <p className="text-sm">{data.artist}</p>
+                  <p className="text-xl font-semibold">{data.track}</p>
+                  <p className="text-large">{data.artist}</p>
                 </a>
               </div>
             </>
@@ -45,7 +45,7 @@ function NowPlaying() {
 export default function NowPlayingWrapper() {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="mx-auto w-full max-w-3xl p-4">
+      <div className="mx-auto mt-auto w-full max-w-3xl p-4">
         <NowPlaying />
       </div>
     </QueryClientProvider>
