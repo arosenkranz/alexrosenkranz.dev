@@ -72,9 +72,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   #hero {
     @apply pb-6 pt-8;
   }
-  #hero h1 {
-    @apply my-4 inline-block text-3xl font-bold sm:my-8 sm:text-5xl;
-  }
+
   #hero p {
     @apply my-2 text-lg;
   }
@@ -96,7 +94,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
   }
   #featured h2,
   #recent-posts h2 {
-    @apply text-2xl font-semibold tracking-wide;
+    @apply text-2xl font-semibold;
   }
   .all-posts-btn-wrapper {
     @apply my-6 text-center;
